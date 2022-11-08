@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Vincent",
+    "picture": "01-blossoming-apricot.jpg",
+    "star_goal_num": 2,
+    "goal_award":"To play outside in the park with mom",
+    "user_id":1
+  },
+  {
+    "name": "Vincent",
+    "picture": "01-blossoming-apricot.jpg",
+    "star_goal_num": 1,
+    "goal_award":"To play outside in the park with mom",
+    "user_id":1
+  },
+  {
+    "name": "Sydney",
+    "picture": "02-cosmos-flowers.jpg",
+    "star_goal_num": 2,
+    "goal_award":"To Bake cookies with dad",
+    "user_id":1
+  },
+  {
+    "name": "Chloe",
+    "picture": "03-sand-sea-summer.jpg",
+    "star_goal_num": 3,
+    "goal_award":"To watch favrite cartoon",
+    "user_id":2
+  },
+  {
+    "name": "Kenney",
+    "picture": "04-beach-chairs.jpg",
+    "star_goal_num": 4,
+    "goal_award":"To play outside in the park with Dad",
+    "user_id":2
+  },
+  {
+    "name": "Silvia",
+    "picture": "05-beach-sunrise.jpg",
+    "star_goal_num": 5,
+    "goal_award":"To play outside in the park with mom",
+    "user_id":3
+  }
+]
