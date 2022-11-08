@@ -1,17 +1,24 @@
 [
   {
-    "name": "Sal",
+    "group_name": "Sal",
     "email": "sal@hotmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "group_star_goal_num":5,
+    "group_goal_award":" To go on vacation"
+
   },
   {
     "name": "Lernantino",
     "email": "lernantino@gmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "group_star_goal_num":5,
+    "group_goal_award":"To go fishing together"
   },
   {
     "name": "Amiko",
     "email": "amiko2k20@aol.com",
-    "password": "password12345"
+    "password": "password12345",
+    "group_star_goal_num":5,
+    "group_goal_award":"To go to favorite resturant together"
   }
 ]
