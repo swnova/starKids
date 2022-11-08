@@ -1,6 +1,6 @@
 const sequelize = require('../config/connection');
-const { User, Kid ,Task_Categories} = require('../models');
-
+const { User, Kid } = require('../models');
+const Task_categories = require('../models/Task_categories');
 const userData = require('./userData.json');
 const kidData = require('./kidData.json');
 const taskCategoryData = require('./taskCategoryData.json');
@@ -21,7 +21,7 @@ const seedDatabase = async () => {
   }
 
   for (const task of taskCategoryData) {
-    await Task_Categories.create({
+    await Task_categories.create({
       ...task,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
