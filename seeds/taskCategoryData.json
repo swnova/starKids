@@ -1,0 +1,28 @@
+[
+    {
+     
+      "task":"Make your bed",
+      "user_id":1
+    },
+    {
+     
+        "task":"Assemble your toys",
+        "user_id":1
+      },
+      {
+     
+        "task":"Complete your homework",
+        "user_id":2
+      },
+      {
+     
+        "task":"clean your room",
+        "user_id":2
+      },
+      {
+     
+        "task":"keep the trash out",
+        "user_id":3
+      }
+  ]
+  
