@@ -1,0 +1,70 @@
+        <h2>Group Achievement </h2>
+        <div class="detail-container">
+            <h3>Happy Family</h3>
+            <ul class="task">
+                <li>Chores  <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_pink.png" class="star-sticker" /><strong>37</strong> </li>
+                <li>Homework <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_yellow.png" class="star-sticker" /><strong>17</strong> </li>
+                <li>Eat healthy food <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_green.png" class="star-sticker" /><strong>22</strong> </li>
+                <li>Care for pets <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_purple.png" class="star-sticker" /><strong>40</strong> </li>
+            </ul>
+            <div class="chartarea">
+            <canvas id="myChart" ></canvas>
+        </div>
+        <section class="familyscore">
+            <div class="myscore">
+                <h3>Family Score:</h3>
+                <p>Total Stars: <strong class="totalstar">90</strong></p>
+                <p><strong class="starleft">210</strong> stars until my goal</p>
+                </div>
+            <div class="mygoal">
+                <h3>Family Goal:</h3>
+                <p>When we earn <strong class="goalstar">300</strong> stars</p>
+                <p>We will play video games all day!</p>
+                </div>
+                
+            </div>
+        </section>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript">
+
+
+const labels = ['Chores', 'Homework', 'Eat healthy', 'Care for pets'];
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'We did it together',
+    data: [34, 17,22, 40],
+    backgroundColor: [
+      '#f1a7c9',
+      '#f1e5aa',
+      '#c7dfa6',
+      '#ac8aac'
+    ],
+    borderColor: [
+      '#ef3589',
+      '#fed403',
+      '#8cc63e',
+      '#873188'
+    ],
+    borderWidth: 1
+  }]
+};
+const config = {
+  type: 'bar',
+  data: data,
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  },
+};
+const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+  
+    </script>
