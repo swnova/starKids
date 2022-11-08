@@ -1,22 +1,22 @@
 [
   {
-    "group_name": "Sal",
-    "email": "sal@hotmail.com",
+    "group_name": "Mo's Munchkins",
+    "email": "Mo@gmail.com",
     "password": "password12345",
     "group_star_goal_num":5,
     "group_goal_award":" To go on vacation"
 
   },
   {
-    "group_name": "Lernantino",
-    "email": "lernantino@gmail.com",
+    "group_name": "Michelle's Weirdos",
+    "email": "Michelle@gmail.com",
     "password": "password123456",
     "group_star_goal_num":5,
     "group_goal_award":"To go fishing together"
   },
   {
-    "group_name": "Amiko",
-    "email": "amiko2k20@aol.com",
+    "group_name": "Sharrod's Babies",
+    "email": "Sharrod@gmail.com",
     "password": "password123457",
     "group_star_goal_num":5,
     "group_goal_award":"To go to favorite resturant together"
