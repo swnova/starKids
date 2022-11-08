@@ -1,5 +1,5 @@
 {
-  "name": "crowd-funding",
+  "name": "star-kids",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -19,7 +19,7 @@
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.25.5"
   },
   "devDependencies": {
     "eslint": "^7.12.1",
