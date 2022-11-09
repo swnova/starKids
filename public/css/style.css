@@ -39,7 +39,37 @@ h2{font-size:20px;}
 .kid-card .view-detail{margin:0 auto;}
 
 .group_summary{background:rgb(247, 220, 224);padding:15px;}
+.group_summary h3{font-weight:bold;font-size:15px;margin-bottom:10px;}
 .nodata{padding:50px 0;}
 .create-kid{background-color:var(--gray-bg-color);padding:20px;}
 
 #picture-preview{width:100px;height:100px;display:none;}
+
+.familyscore{display:flex;}
+.mygoal{padding:20px;}
+
+.myscore{background:rgb(228, 227, 227);padding:20px;border-radius: 20px;margin-bottom:15px;}
+.goalstar{color:blue;font-size:1.2em;}
+.myscore strong{color:red;font-size:1.5em;}
+
+ul.task{display: flex; margin:10px 0}
+.task li{margin-bottom:5px;font-weight:bold;font-size:1.2em;margin-right:25px;}
+
+.detail-container{display:flex;}
+.detail-container h3{font-size:18px;font-weight:bold;}
+.detail-container .myscore{margin:20px 0 0 0;background:rgb(228, 227, 227);padding:20px;border-radius: 20px;margin-bottom:15px;}
+.detail-container .goalstar{color:blue;font-size:1.2em;}
+.detail-container .myscore strong{color:red;font-size:1.5em;}
+.detail-container .left{width:30%;}
+.detail-container .right {padding-left:20px;width:70%;}
+.detail-container p{font-weight:bold;font-size:1.2em;line-height:160%;}
+.detail-container .task{display:block;}
+.detail-container .task li{margin-bottom:5px;font-weight:bold;font-size:1.2em;}
+.detail-container .task li button{padding:2px 6px;font-family: sans-serif;font-size:13px;}
+.detail-container .inditable{border:1px solid #ccc; border-radius: 10px;padding:25px;margin:15px 0 0 0;}
+.detail-container .inditable th{padding:4px 0px;border-bottom:2px solid rgb(228, 227, 227);}
+.detail-container .inditable td{border-bottom:1px solid rgb(228, 227, 227);padding:4px 10px;}
+.detail-container .inditable .star-sticker{width:28px;}
+.detail-container  .profileimg img{width:150px;margin-bottom:10px;}
+
+.detail-container .task li.notask{font-weight:normal;font-size:1.0em;color:red;}

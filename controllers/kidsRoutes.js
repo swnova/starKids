@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Kid } = require('../models');
+const {User, Kid, Task } = require('../models');
 
 router.post('/', async (req, res) => {
   if(!req.session.logged_in){
@@ -40,5 +40,22 @@ router.delete('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get("/:id",(req,res)=>{
+  if(!req.session.logged_in){
+      return res.redirect("/login")
+  }
+  Kid.findByPk(req.params.id,{
+    include:[
+      {model: User, include:[Task]}
+    ]
+  }).then(userData=>{
+      const hbsData = userData.toJSON();
+      
+      hbsData.logged_in=req.session.logged_in
+      console.log(hbsData)
+      res.render("kidDetail",hbsData)
+  })
+})
 
 module.exports = router;
