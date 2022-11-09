@@ -1,5 +1,6 @@
 const User = require('./User');
 const Kid = require('./Kid');
+const Task = require('./Task_categories');
 
 User.hasMany(Kid, {
   foreignKey: 'user_id',
@@ -10,4 +11,13 @@ Kid.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-module.exports = { User, Kid };
+User.hasMany(Task, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
+
+Task.belongsTo(User, {
+  foreignKey: 'user_id'
+});
+
+module.exports = { User, Kid, Task };

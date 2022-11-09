@@ -24,3 +24,21 @@ createKidForm.addEventListener("submit", e=>{
         }
     })
 })
+
+const delButtons = document.querySelectorAll(".delBtn");
+
+delButtons.forEach(delBtn=>{
+    delBtn.addEventListener("click",e=>{
+        const projId = e.target.getAttribute("data-projid")
+        console.log(projId);
+        fetch(`/kids/${projId}`,{
+            method:"DELETE"
+        }).then(res=>{
+            if(res.ok){
+                location.reload();
+            } else {
+                alert("trumpet sound")
+            }
+        })
+    })
+})

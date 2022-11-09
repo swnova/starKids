@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {User, Kid} = require('../models');
+const {User, Kid, Task } = require('../models');
 
 router.get("/",(req,res)=>{
     User.findAll().then(users=>{
@@ -52,5 +52,21 @@ router.get("/profile",(req,res)=>{
         res.render("kidProfile",hbsData)
     })
 })
+
+router.get("/group-profile",(req,res)=>{
+    if(!req.session.logged_in){
+        return res.redirect("/login")
+    }
+    User.findByPk(req.session.user_id,{
+        include:[Kid, Task]
+    }).then(userData=>{
+        const hbsData = userData.toJSON();
+        
+        hbsData.logged_in=req.session.logged_in
+        console.log(hbsData)
+        res.render("groupProfile",hbsData)
+    })
+})
+
 
 module.exports = router;
