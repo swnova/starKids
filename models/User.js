@@ -20,6 +20,10 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    group_picture: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     group_star_goal_num: {
       type: DataTypes.INTEGER,
       allowNull: false,
