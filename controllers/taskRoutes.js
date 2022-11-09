@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Task } = require('../../models');
+const { Task } = require('../models');
 
 router.post('/', async (req, res) => {
   if(!req.session.logged_in){
