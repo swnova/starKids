@@ -1,11 +1,12 @@
 const router = require('express').Router();
-const { Kid } = require('../../models');
+const { Kid } = require('../models');
 
 router.post('/', async (req, res) => {
   if(!req.session.logged_in){
     return res.status(401).json({msg:"please login"})
   }
   try {
+    console.log(req.body);
     const newKid = await Kid.create({
       ...req.body,
       user_id: req.session.user_id,

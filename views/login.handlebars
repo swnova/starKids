@@ -4,19 +4,21 @@
     <input type="password" name="loginPassword" id="loginPassword" placeholder="loginPassword">
     <button>Login</button>
 </form>
-<br /><br />
+<br /><br /><br />
 <h2>Signup</h2>
 <form action="" id="signup">
- 
-    <input type="text" name="signupEmail" id="signupEmail" placeholder="signupEmail">
-    <input type="password" name="signupPassword" id="signupPassword" placeholder="signupPassword"> 
-    <input type="text" name="signupName" id="signupName" placeholder="signupName">
+    <div class="basicinfo">
+        <input type="text" name="signupEmail" id="signupEmail" placeholder="signupEmail">
+        <input type="password" name="signupPassword" id="signupPassword" placeholder="signupPassword"> 
+        <input type="text" name="signupName" id="signupName" placeholder="signupName">
+    </div>
     
-    <div>
+    <div class="groupinfo">
         <h3>Tell me about your group</h3>
-        <label>Group Name:</label><input type="text" name="groupName" id="groupName" /> <br />
-        <label>Goal Stars:</label><input type="text" name="groupStarNum" id="groupStarNum" /> <br />
-        <lable>Goal Award:</lable><input type="text" name="groupAward" id="groupAward" />
+        
+        <label>What do you want to call your group? </label><input type="text" name="groupName" id="groupName" /> <br />
+        <label>How many stars do you want to collect to win the award as a group? </label><input type="text" name="groupStarNum" id="groupStarNum" /> <br />
+        <lable>Waht is the award? </lable><input type="text" name="groupAward" id="groupAward" placeholder="We will ..." />
         
     </div>
 <button>Signup</button>

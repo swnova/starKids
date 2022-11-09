@@ -1,41 +1,76 @@
-<h2>Star Kids!</h2>
+<div class="group_summary">
+<h2>Welcome to {{group_name}}  <a href="##">See Details</a></h2>
+<p>When we earn <strong class="goalstar">{{group_star_goal_num}}</strong> stars, 
+{{group_goal_award}}</p>
+</div>
+
 <div class="kids-container">
 
     <!-- for each kid -->
+    {{#each kids}}
     <div class="kid-card">
-        <h3>Vincent</h3>
-        <span class="kid-pic"><img src="../assets/pic_v.jpg" /></span>
-        <ul class="task">
+        <h3>{{name}}</h3>
+        <span class="kid-pic"><img src="{{picture}}" /></span>
+        {{!-- <ul class="task">
             <li>Chores  <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_pink.png" class="star-sticker" /><strong>8</strong> </li>
             <li>Homework <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_yellow.png" class="star-sticker" /><strong>12</strong> </li>
             <li>Eat healthy food <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_green.png" class="star-sticker" /><strong>4</strong> </li>
             <li>Care for pets <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_purple.png" class="star-sticker" /><strong>13</strong> </li>
-        </ul>
+        </ul> --}}
+        <p>Goal Star: {{star_goal_num}}</p>
+        <p>{{goal_award}}</p>
         <a href="##"><button>View Details</button></a>
     </div>
+    {{else}}
+    <p class="nodata">No Kid Data. Please enter kid's information.</p>
+    {{/each}}
     <!-- for each kid -->
 
 </div>
 
-<h2>Create a star kid!</h2>
 <div class="create-kid">
-    <form id="createKid">
+<h2>Create a star kid!</h2>
+
+    <form id="createKid" action="/upload" enctype="multipart/form-data" method="post">
         <div>
             <label for="kidName">Name:</label>
-            <input type="text" id="kidName" />
+            <input type="text" id="kidName" required/>
         </div>
         <div>
-            <label for="kidPic">Select a file:</label>
-            <input type="file" id="kidPic" name="kidPic">
+            <label for="kidPic">Kids' photo:</label> 
+            <button id="upload_widget" class="cloudinary-button">Upload a picture</button>
+            <img id="picture-preview" src=""/>
         </div>
         <div>
             <label for="kidGoal">Goal Star:</label>
-            <input type="input" id="kidGoalStar" name="kidGoalStar" />
+            <input type="input" id="kidGoalStar" name="kidGoalStar" required/>
         </div>
         <div>
             <label for="kidAward">Award:</label>
-            <input type="input" id="kidAward" name="kidAward" />
+            <input type="input" id="kidAward" name="kidAward" required/>
         </div>
+        
+
+<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
+
+<script type="text/javascript">  
+var myWidget = cloudinary.createUploadWidget({
+  cloudName: 'digyae86x', 
+  uploadPreset: 'prjdz6ga'}, (error, result) => { 
+    if (!error && result && result.event === "success") { 
+      console.log('Done! Here is the image info: ', result.info); 
+      console.log(result.info.secure_url)
+      const previewImg = document.querySelector("#picture-preview");
+      previewImg.setAttribute('style',"display:block")
+      previewImg.setAttribute('src', result.info.secure_url);
+    }
+  }
+)
+
+document.getElementById("upload_widget").addEventListener("click", function(){
+    myWidget.open();
+  }, false);
+</script>
         <button>Create!</button>
     </form>
 </div>

@@ -1,0 +1,45 @@
+:root {
+    --border-radius:20px;
+    --card-border-color:#ccc;
+    --gray-bg-color:rgb(238, 238, 238);
+}
+
+body{
+    background-image: url('https://morisky78.github.io/Portfolio/assets/images/temp/twinkle-little-star-1.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    }
+.container{
+width:90%;
+margin:15px auto;
+background:#fff;
+border-radius: var(--border-radius);
+box-shadow: 0 0 14px rgba(0, 0, 0, 0.8);
+display:flex;
+margin:20px auto 0;
+max-width: 1260px;
+}
+
+.main-navigation{width:20%;background-color:rgb(237, 236, 252);border-radius: var(--border-radius) 0 0 var(--border-radius);}
+.main-navigation .inside{padding:20px;}
+.main-navigation .familypic img{width:200px;height:200px;border-radius:200px;border:5px solid #fff;}
+.main-navigation ul{padding:20px 0;}
+.main-navigation li{margin-bottom:8px;padding-left:15px;}
+
+.main-content{width:80%;padding:10px;}
+h2{font-size:20px;}
+.kids-container{display:flex;justify-content: space-around;margin:30px 0;}
+.kid-card{width:30%;border:1px solid #ccc;background:#fff;box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);border-radius: 5px;padding:10px;text-align: center;}
+.kid-card h3{text-align:center;font-weight:bold;margin:0 0 5px;font-size:1.2em;}
+.kid-pic img{width:100%;}
+.star-sticker{width:22px;margin:0 5px -3px 0;}
+
+.kid-card .task{margin:10px 0 15px 5px;text-align: left;}
+.kid-card .view-detail{margin:0 auto;}
+
+.group_summary{background:rgb(247, 220, 224);padding:15px;}
+.nodata{padding:50px 0;}
+.create-kid{background-color:var(--gray-bg-color);padding:20px;}
+
+#picture-preview{width:100px;height:100px;display:none;}

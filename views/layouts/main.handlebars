@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../assets/css/reset.css" />
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
     <div class="container">
@@ -15,18 +15,23 @@
             <h1>Star Kids</h1>
             <!-- <div class="familypic"><img src="../assets/pic_all.jpg" /></div> -->
             <ul>
-                <li><a href="##">Home</a></li>
-                <li><a href="##">Login</a></li>
-
-                <li><a href="##">Profile</a></li>
-
+                <li><a href="/">Home</a></li>
+                
+                {{#if logged_in}}
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="##">Star Family</a></li>
+                <li><button id ="logoutBtn">Log out</button></li>
+                {{else}}
+                <li><a href="/login">Login</a></li>
+                {{/if}}
+<!-- 
                 <li><a href="##">Sidney</a></li>
                 <li><a href="##">Vincent</a></li>
                 <li><a href="##">Chloe</a></li>
-
-                <li><a href="##">Star Family</a></li>
+-->
                 
-                <li><a href="##">Log out</a></li>
+                
+                
             </ul>
             </div>
         </section>
@@ -37,5 +42,6 @@
         <!-- main content ends -->
         </main>
     </div>
+    <script src="/js/logout.js"></script>
 </body>
 </html>
