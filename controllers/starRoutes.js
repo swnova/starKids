@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Star } = require('../models');
 
-//post a star to a kid
+//post a star to a task for a kid
 router.post('/', async (req, res) => {
     if(!req.session.logged_in){
       return res.status(401).json({msg:"please login"})
