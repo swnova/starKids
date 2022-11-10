@@ -26,10 +26,22 @@
                     </div>
 
                 <div class="inditable">
-                    <p>TODO:  need to display star table</p>
                     <table>
                         <tr><th>dates</th><th>stars</th></tr>
-                        <tr><td>10/02/22</td>
+{{#each starDateSet}}
+<tr>
+<td>{{date}}</td>
+<td>
+    {{#each taskColors as | color |}}
+    <img src="/images/stars/star_{{color}}.png" class="star-sticker" />
+    {{/each}}
+</td>
+</tr>
+{{else}}
+<tr><td></td><td>No stars yet! keep it up!</td></tr>
+{{/each}}
+
+                        {{!-- <tr><td>10/02/22</td>
                             <td><img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_pink.png" class="star-sticker" />
                                 <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_pink.png" class="star-sticker" />
                                 <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_yellow.png" class="star-sticker" />
@@ -37,44 +49,9 @@
                                 <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_purple.png" class="star-sticker" />
                                 <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_green.png" class="star-sticker" />
                             </td>
-                        </tr>
-                        <tr><td>10/03/22</td>
-                            <td><img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_yellow.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_green.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_yellow.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_purple.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_purple.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_purple.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_green.png" class="star-sticker" />
-                            </td>
-                        </tr>
-                        <tr><td>10/04/22</td>
-                            <td><img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_green.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_green.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_purple.png" class="star-sticker" />
-                            </td>
-                        </tr>
-                        <tr><td>10/05/22</td>
-                            <td><img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_green.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_pink.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_pink.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_purple.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_yellow.png" class="star-sticker" />
-                            </td>
-                        </tr>
-                        <tr><td>10/06/22</td>
-                            <td><img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_yellow.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_pink.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_green.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_purple.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_yellow.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_yellow.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_pink.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_green.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_purple.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_yellow.png" class="star-sticker" />
-                            </td>
-                        </tr>
+                        </tr> --}}
+
+
                     </table>
                 </div>
             </div>
