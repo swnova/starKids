@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const { Task } = require('../models');
+const { Task} = require('../models');
 
+// post a task
 router.post('/', async (req, res) => {
   if(!req.session.logged_in){
     return res.status(401).json({msg:"please login"})
@@ -17,7 +18,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-
+// delete a task
 router.delete('/:id', async (req, res) => {
   if(!req.session.logged_in){
     return res.status(401).json({msg:"please login"})
