@@ -5,14 +5,17 @@ Hello and welcome to Star Kids - where parents win and kids score!
 As a parent user, you set up tasks and their corresponding points for each of your child. You can also set up rewards and their corresponding points. 
 A child can earn points by doing tasks, and with enough points they can choose the reward they want.
 
-## Installation
+## Installation for local use
 First the user needs to install npm packages, which should come with sequelize, mysql, and cloudinary. The user needs to make sure to use mysql to get the db set and run the seeds.
 
-## Use
+## Use for deployed app
 The user must make sure to run mysql to get the db and tables. Once this is done the user needs to run the seeds and get the server up and listening. From here the user can create or login to an account. After you have logged in you may add children, tasks, and stars to their profile page.User has the ability to add or remove children, tasks, and once a task is completed then add a star!
 
 ## Mock up
 ![The basic table structure.](./public/images/table_structure.png)
+
+github- https://github.com/swnova/starKids.git
+heroku- 
 
 ## collab
 Mo- She was our frontend guru, she used her amazing skills to make the client side of our project amazing and pleasing to the eye! While also adding the handlebars to make it functioning.

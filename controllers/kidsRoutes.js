@@ -2,6 +2,7 @@ const router = require('express').Router();
 const {User, Kid, Task, Star } = require('../models');
 const moment = require('moment-timezone');
 
+//add a kid to profile
 router.post('/', async (req, res) => {
   if(!req.session.logged_in){
     return res.status(401).json({msg:"please login"})
@@ -19,6 +20,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+//remove a kid from profile
 router.delete('/:id', async (req, res) => {
   if(!req.session.logged_in){
     return res.status(401).json({msg:"please login"})
@@ -60,7 +62,7 @@ router.get("/:id",(req,res)=>{
     hbsData.starsUntilGoal = hbsData.star_goal_num - hbsData.stars.length;
     console.log(hbsData.user.task_categories)
 
-    //array of object with taskId,  taskName & the number of stars of the task that this kid has
+    //array of object with taskId, taskName & the number of stars of the task that this kid has
     const taskSet = [] ; 
     const colors = ['blue', 'green', 'pink', 'purple', 'yellow','orange', 'navy', 'red', 'aqua'];
 

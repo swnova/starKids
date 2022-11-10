@@ -32,20 +32,17 @@ Star.init(
         key: 'id',
       },
     },
-    // date: {
-    //   type: DataTypes.NOW,
-    //   allowNull: false,
-    //   defaultValue: moment.utc().format('YYYY-MM-DD'),
-    //   field: 'createdAt'
-    // },
   },
   {
     sequelize,
     timestamps: true,
+    createdAt: false, // don't add createdAt attribute
+    updatedAt: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'star',
   }
 );
+
 
 module.exports = Star;
