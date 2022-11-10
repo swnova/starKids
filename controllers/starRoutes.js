@@ -1,16 +1,16 @@
 const router = require('express').Router();
-const { User, Star, Kid, Task} = require('../models');
+const { Star } = require('../models');
 
 //post a star to a kid
 router.post('/', async (req, res) => {
     if(!req.session.logged_in){
       return res.status(401).json({msg:"please login"})
     }
-    Star.findByPk(req.params.id,{
-              include:[
-                {model: User, include:[Task], include:[Kid]}
-              ]
-            })
+    // Star.findByPk(req.params.id,{
+    //           include:[
+    //             {model: User, include:[Task], include:[Kid]}
+    //           ]
+    //         })
     try {
       const newStar = await Star.create({
         ...req.body,

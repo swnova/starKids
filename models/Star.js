@@ -32,15 +32,16 @@ Star.init(
         key: 'id',
       },
     },
-    date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
+    // date: {
+    //   type: DataTypes.NOW,
+    //   allowNull: false,
+    //   defaultValue: moment.utc().format('YYYY-MM-DD'),
+    //   field: 'createdAt'
+    // },
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'star',

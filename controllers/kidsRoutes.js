@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {User, Kid, Task } = require('../models');
+const {User, Kid, Task, Star } = require('../models');
 
 router.post('/', async (req, res) => {
   if(!req.session.logged_in){
@@ -47,14 +47,33 @@ router.get("/:id",(req,res)=>{
   }
   Kid.findByPk(req.params.id,{
     include:[
-      {model: User, include:[Task]}
+      {model: User, include:[Task]},
+      {model: Star, include:[Task]}
     ]
   }).then(userData=>{
-      const hbsData = userData.toJSON();
-      
-      hbsData.logged_in=req.session.logged_in
-      console.log(hbsData)
-      res.render("kidDetail",hbsData)
+    const hbsData = userData.toJSON();
+
+    hbsData.logged_in=req.session.logged_in;
+    hbsData.starsUntilGoal = hbsData.star_goal_num - hbsData.stars.length;
+    console.log(hbsData.user.task_categories)
+
+    //array of object with taskId,  taskName & the number of stars of the task that this kid has
+    const taskSet = [] ; 
+    const colors = ['blue', 'green', 'pink', 'purple', 'yellow','orange', 'navy', 'red', 'aqua'];
+
+    for (let i = 0; i < hbsData.user.task_categories.length ; i++) {
+      const starsForThisTask = hbsData.stars.filter(star => star.task_category_id == hbsData.user.task_categories[i].id)      
+      const taskSetObj  = { 
+        id: hbsData.user.task_categories[i].id, 
+        task: hbsData.user.task_categories[i].task, 
+        starnum : starsForThisTask.length,
+        color: colors[i]
+      } 
+      taskSet.push(taskSetObj)
+    }
+    hbsData.taskSet = taskSet;
+    console.log(hbsData)
+    res.render("kidDetail",hbsData)
   })
 })
 
