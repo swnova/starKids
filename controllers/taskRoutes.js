@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Task} = require('../models');
 
-// post a task
+// post a new task
 router.post('/', async (req, res) => {
   if(!req.session.logged_in){
     return res.status(401).json({msg:"please login"})

@@ -6,7 +6,6 @@ router.get("/",(req,res)=>{
     User.findAll().then(users=>{
         const userHbsData = users.map(user=>user.get({plain:true}))
         console.log(users);
-        console.log("==============")
         console.log(userHbsData);
 
         res.render("home",{
@@ -32,6 +31,7 @@ router.get("/sessions",(req,res)=>{
 //     })
 // })
 
+// redirects to kid profile once logged in 
 router.get("/login",(req,res)=>{
     if(req.session.logged_in){
         return res.redirect("/profile")
@@ -39,7 +39,7 @@ router.get("/login",(req,res)=>{
     res.render("login")
 })
 
-router.get("/profile",(req,res)=>{
+router.get("/kidprofile",(req,res)=>{
     if(!req.session.logged_in){
         return res.redirect("/login")
     }
@@ -53,6 +53,7 @@ router.get("/profile",(req,res)=>{
     })
 })
 
+//redirects to group profile once logged in
 router.get("/group-profile",(req,res)=>{
     if(!req.session.logged_in){
         return res.redirect("/login")
