@@ -21,6 +21,7 @@ const sess = {
   })
 };
 
+//middleware
 app.use(express.static("public"))
 
 const hbs = exphbs.create({});

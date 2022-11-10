@@ -32,12 +32,6 @@ Star.init(
         key: 'id',
       },
     },
-    // date: {
-    //   type: DataTypes.NOW,
-    //   allowNull: false,
-    //   defaultValue: moment.utc().format('YYYY-MM-DD'),
-    //   field: 'createdAt'
-    // },
   },
   {
     sequelize,
