@@ -44,4 +44,4 @@ Star.belongsTo(Kid,{
 Star.belongsTo(User, {
   foreignKey:'user_id'
 });
-module.exports = { User, Kid, Task };
+module.exports = { User, Kid, Task, Star };

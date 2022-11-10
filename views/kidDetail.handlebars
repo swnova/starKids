@@ -1,24 +1,21 @@
-<h2>{{name}}</h2>
+<h2 data-kidId="{{id}}" id="kid-info">{{name}}</h2>
         <div class="detail-container">
             <div class="left">
                 <span class="profileimg"><img src="{{picture}}" /></span>
                 <ul class="task">
-                    {{#each user.task_categories}}
-                    <li>{{task}}  <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_pink.png" class="star-sticker" /><strong>#</strong> <button>I did it!</button></li>
+                    {{#each taskSet}}
+                    <li>{{task}}  <img src="/images/stars/star_{{color}}.png" class="star-sticker" /><strong>{{starnum}}</strong> <button class="iDidItBtn" data-taskId="{{id}}">I did it!</button></li>
                     {{else}}
                     <li class="notask">There is no task in this group. please go to Group Profile and create some tasks</li>
                     {{/each}}
-                    {{!-- <li>Chores  <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_pink.png" class="star-sticker" /><strong>8</strong> <button>I did it!</button></li>
-                    <li>Homework <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_yellow.png" class="star-sticker" /><strong>12</strong> <button>I did it!</button></li>
-                    <li>Eat healthy food <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_green.png" class="star-sticker" /><strong>4</strong> <button>I did it!</button></li>
-                    <li>Care for pets <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_purple.png" class="star-sticker" /><strong>13</strong> <button>I did it!</button></li> --}}
+
                 </ul>
 
                 
                 <div class="myscore">
                 <h3>My Score:</h3>
-                <p>Total Stars: <strong class="totalstar">TODO</strong></p>
-                <p><strong class="starleft">TODO</strong> stars until my goal</p>
+                <p>Total Stars: <strong class="totalstar">{{stars.length}}</strong></p>
+                <p><strong class="starleft">{{starsUntilGoal}}</strong> stars until my goal</p>
                 </div>
             </div>
             <div class="right">
@@ -82,3 +79,5 @@
                 </div>
             </div>
         </div>
+
+        <script src="/js/kidDetail.js"></script>
