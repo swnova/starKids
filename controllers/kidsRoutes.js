@@ -79,47 +79,48 @@ router.get("/:id",(req,res)=>{
     
 
 
-
     // array of object with date, and stars for each date
     const starDateSet = [];
 
+    if ( hbsData.stars.length > 0 ){
     // get the first date from the star array
-    let aDate = moment(hbsData.stars[0].createdAt).format('YYYY-MM-DD');
-    
-    let taskIdArray = [];
-    
-
-
-    for (let i = 0; i < hbsData.stars.length ; i++) {
-
-      const thisStar = hbsData.stars[i];
-      const thisDate = moment(hbsData.stars[0].createdAt).format('YYYY-MM-DD');
-
-      if ( aDate === thisDate ){
-        taskIdArray.push(thisStar.task_category_id)
-
-      } else { 
-        // date changed
-        // create starDateObject for previous date. and insert to the starDateSet
-        
-        const starDateSetObj = {
-          date : aDate,
-          taskColors : taskIdArray.map(taskid => taskSet.find(item => item.id===taskid).color )
-        }
-        starDateSet.push(starDateSetObj);
-        // now create a new array for new date
-        taskIdArray = [];
-        aDate = thisDate;
-      }
+      console.log("*****");
+      let aDate = moment(hbsData.stars[0].updatedAt).format('YYYY-MM-DD');
       
-    }
-    // create starDateObject for the last date. and insert to the starDateSet
-    const starDateSetObj = {
-      date : aDate,
-      taskColors : taskIdArray.map(taskid => taskSet.find(item => item.id===taskid).color)
-    }
-    starDateSet.push(starDateSetObj);
-    console.log(starDateSet);
+      let taskIdArray = [];
+      
+      for (let i = 0; i < hbsData.stars.length ; i++) {
+
+        const thisStar = hbsData.stars[i];
+        const thisDate = moment(hbsData.stars[0].updatedAt).format('YYYY-MM-DD');
+
+        if ( aDate === thisDate ){
+          taskIdArray.push(thisStar.task_category_id)
+
+        } else { 
+          // date changed
+          // create starDateObject for previous date. and insert to the starDateSet
+          
+          const starDateSetObj = {
+            date : aDate,
+            taskColors : taskIdArray.map(taskid => taskSet.find(item => item.id===taskid).color )
+          }
+          starDateSet.push(starDateSetObj);
+          // now create a new array for new date
+          taskIdArray = [];
+          aDate = thisDate;
+        }
+        
+      }
+      // create starDateObject for the last date. and insert to the starDateSet
+      const starDateSetObj = {
+        date : aDate,
+        taskColors : taskIdArray.map(taskid => taskSet.find(item => item.id===taskid).color)
+      }
+      starDateSet.push(starDateSetObj);
+      console.log(starDateSet);
+    } 
+  
 
     hbsData.taskSet = taskSet;
     hbsData.starDateSet = starDateSet;
