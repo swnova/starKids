@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const {User, Kid, Task, Star } = require('../models');
+const moment = require('moment-timezone');
 
 //add a kid to profile
 router.post('/', async (req, res) => {
@@ -48,10 +49,12 @@ router.get("/:id",(req,res)=>{
       return res.redirect("/login")
   }
   Kid.findByPk(req.params.id,{
+    order: [[Star,'updatedAt', 'ASC']],
     include:[
       {model: User, include:[Task]},
-      {model: Star, include:[Task]}
+      {model: Star, }
     ]
+
   }).then(userData=>{
     const hbsData = userData.toJSON();
 
@@ -73,7 +76,55 @@ router.get("/:id",(req,res)=>{
       } 
       taskSet.push(taskSetObj)
     }
+    
+
+
+    // array of object with date, and stars for each date
+    const starDateSet = [];
+
+    if ( hbsData.stars.length > 0 ){
+    // get the first date from the star array
+      console.log("*****");
+      let aDate = moment(hbsData.stars[0].updatedAt).format('YYYY-MM-DD');
+      
+      let taskIdArray = [];
+      
+      for (let i = 0; i < hbsData.stars.length ; i++) {
+
+        const thisStar = hbsData.stars[i];
+        const thisDate = moment(hbsData.stars[0].updatedAt).format('YYYY-MM-DD');
+
+        if ( aDate === thisDate ){
+          taskIdArray.push(thisStar.task_category_id)
+
+        } else { 
+          // date changed
+          // create starDateObject for previous date. and insert to the starDateSet
+          
+          const starDateSetObj = {
+            date : aDate,
+            taskColors : taskIdArray.map(taskid => taskSet.find(item => item.id===taskid).color )
+          }
+          starDateSet.push(starDateSetObj);
+          // now create a new array for new date
+          taskIdArray = [];
+          aDate = thisDate;
+        }
+        
+      }
+      // create starDateObject for the last date. and insert to the starDateSet
+      const starDateSetObj = {
+        date : aDate,
+        taskColors : taskIdArray.map(taskid => taskSet.find(item => item.id===taskid).color)
+      }
+      starDateSet.push(starDateSetObj);
+      console.log(starDateSet);
+    } 
+  
+
     hbsData.taskSet = taskSet;
+    hbsData.starDateSet = starDateSet;
+
     console.log(hbsData)
     res.render("kidDetail",hbsData)
   })
