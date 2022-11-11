@@ -8,16 +8,15 @@ body{
     background-image: url('https://morisky78.github.io/Portfolio/assets/images/temp/twinkle-little-star-1.jpg');
     background-size: cover;
     background-position: center;
-    
+    padding:20px 0;
     }
 .container{
 width:90%;
-margin:15px auto;
+margin:0 auto;
 background:#fff;
 border-radius: var(--border-radius);
 box-shadow: 0 0 14px rgba(0, 0, 0, 0.8);
 display:flex;
-margin:20px auto 0;
 max-width: 1260px;
 }
 
@@ -28,7 +27,7 @@ max-width: 1260px;
 .main-navigation li{margin-bottom:8px;padding-left:15px;}
 
 .main-content{width:80%;padding:10px;}
-h2{font-size:20px;}
+h2{font-size:1.5em;font-weight:bold;margin-bottom:10px;}
 .kids-container{display:flex;justify-content: space-around;margin:30px 0;flex-wrap:wrap}
 .kid-card{width:30%;border:1px solid #ccc;background:#fff;box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);border-radius: 5px;padding:10px;text-align: center;margin-bottom:10px;}
 .kid-card h3{text-align:center;font-weight:bold;margin:0 0 5px;font-size:1.2em;}
@@ -50,10 +49,22 @@ h2{font-size:20px;}
 .nodata{padding:50px 0;}
 .create-kid{background-color:var(--gray-bg-color);padding:20px;}
 
-#picture-preview{width:130px;height:130px;vertical-align: center;}
+#picture-preview{width:130px;height:130px;}
+
 .createkid_container{display:flex;}
 .createkid_container form{padding-left:10px;}
+.create-kid div{margin-bottom:5px;}
 
+.create-group{background-color:var(--gray-bg-color);padding:20px;}
+.creategroup_container{display:flex;}
+.create-group #picture-preview{width:170px;height:170px;}
+.create-group form{padding-left:20px;}
+.create-group h3{font-weight:bold;margin-bottom:5px;font-weight:1.2em;}
+.create-group input{margin-bottom:5px;}
+.create-group .groupinfo{padding-top:15px;}
+.create-group .groupinfo div{margin-bottom:5px;}
+.create-group #groupStarNum{width:100px;}
+.sbmbtn{width:200px;height:40px;border:2px solid blue;background:darkgrey;border-radius: 5px;}
 .familyscore{display:flex;}
 .mygoal{padding:20px;}
 

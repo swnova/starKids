@@ -18,7 +18,7 @@ createKidForm.addEventListener("submit", e=>{
         }
     }).then(res=>{
         if(res.ok){
-           // location.reload()
+           location.reload()
         } else {
             alert("trumpet sound")
         }

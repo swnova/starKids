@@ -51,10 +51,10 @@ router.get("/:id",(req,res)=>{
   Kid.findByPk(req.params.id,{
     include:[
       {model: User, include:[Task]},
-      {model: Star}
+      {model: Star, }
     ],
     order: [
-      [Star,'updatedAt', 'ASC']
+      [Star,'updatedAt', 'ASC'],
     ],
 
   }).then(userData=>{
@@ -64,7 +64,9 @@ router.get("/:id",(req,res)=>{
 
     const starleft = hbsData.star_goal_num - hbsData.stars.length;
     hbsData.starsUntilGoal = ( starleft < 0 )? 0 : starleft ;
-    console.log(hbsData.user.task_categories)
+
+    // to show tasks in order of task-id
+    hbsData.user.task_categories.sort((a, b) => (a.id > b.id) ? 1 : -1);
 
     //array of object with taskId, taskName & the number of stars of the task that this kid has
     const taskSet = [] ; 
@@ -88,7 +90,7 @@ router.get("/:id",(req,res)=>{
 
     if ( hbsData.stars.length > 0 ){
     // get the first date from the star array
-      console.log("*****");
+
       let aDate = moment(hbsData.stars[0].updatedAt).format('YYYY-MM-DD');
       
       let taskIdArray = [];
@@ -96,7 +98,7 @@ router.get("/:id",(req,res)=>{
       for (let i = 0; i < hbsData.stars.length ; i++) {
 
         const thisStar = hbsData.stars[i];
-        const thisDate = moment(hbsData.stars[0].updatedAt).format('YYYY-MM-DD');
+        const thisDate = moment(hbsData.stars[i].updatedAt).format('YYYY-MM-DD');
 
         if ( aDate === thisDate ){
           taskIdArray.push(thisStar.task_category_id)
@@ -113,6 +115,8 @@ router.get("/:id",(req,res)=>{
           // now create a new array for new date
           taskIdArray = [];
           aDate = thisDate;
+
+          taskIdArray.push(thisStar.task_category_id)
         }
         
       }
@@ -122,7 +126,7 @@ router.get("/:id",(req,res)=>{
         taskColors : taskIdArray.map(taskid => taskSet.find(item => item.id===taskid).color)
       }
       starDateSet.push(starDateSetObj);
-      console.log(starDateSet);
+
     } 
   
 
