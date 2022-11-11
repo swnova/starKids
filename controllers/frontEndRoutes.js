@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {User, Kid, Task } = require('../models');
+const {User, Kid, Task, Star } = require('../models');
 
 router.get("/",(req,res)=>{
     User.findAll().then(users=>{
@@ -18,18 +18,6 @@ router.get("/",(req,res)=>{
 router.get("/sessions",(req,res)=>{
     res.json(req.session)
 })
-// router.get("/project/:id",(req,res)=>{
-//     Project.findByPk(req.params.id,{
-//         include:[User]
-//     }).then(project=>{
-//         const projectHbsData = project.get({plain:true});
-//         console.log(project);
-//         console.log("==============")
-//         console.log(projectHbsData)
-//         projectHbsData.logged_in=req.session.logged_in
-//         res.render("proj-details",projectHbsData)
-//     })
-// })
 
 // redirects to kid profile once logged in 
 router.get("/login",(req,res)=>{
@@ -59,11 +47,39 @@ router.get("/group-profile",(req,res)=>{
         return res.redirect("/login")
     }
     User.findByPk(req.session.user_id,{
-        include:[Kid, Task]
+        include:[Kid, Task, Star],
+        order: [
+          [Task,'id', 'ASC']
+        ],
     }).then(userData=>{
         const hbsData = userData.toJSON();
         
-        hbsData.logged_in=req.session.logged_in
+        const starleft = hbsData.group_star_goal_num - hbsData.stars.length;
+        hbsData.starsUntilGoal = ( starleft < 0 )? 0 : starleft ;
+
+        const taskSet = [] ; 
+        const colors = ['blue', 'green', 'pink', 'purple', 'yellow','orange', 'navy', 'red', 'aqua'];
+        const colorCodes = ['#01b2e6', '#8cc63e', '#ef3589', '#863288', '#fed403','#fb8405', '#031e91', '#f90606', '#03fbdb'];
+        const bgColorCodes = ['#a6e2f4', '#d7f5af', '#fcd5fd', '#ca96cb', '#fdf3c3','#fdc58a', '#6373b9', '#f8abab', '#cffcf6'];
+    
+        for (let i = 0; i < hbsData.task_categories.length ; i++) {
+          const starsForThisTask = hbsData.stars.filter(star => star.task_category_id == hbsData.task_categories[i].id)      
+          const taskSetObj  = { 
+            id: hbsData.task_categories[i].id, 
+            task: hbsData.task_categories[i].task, 
+            starnum : starsForThisTask.length,
+            color: colors[i],
+            colorCodes: colorCodes[i],
+            bgcolorCodes: bgColorCodes[i]
+          } 
+          taskSet.push(taskSetObj)
+        }
+    
+        console.log(taskSet);
+
+        hbsData.logged_in=req.session.logged_in;
+        hbsData.taskSet = taskSet;
+
         console.log(hbsData)
         res.render("groupProfile",hbsData)
     })

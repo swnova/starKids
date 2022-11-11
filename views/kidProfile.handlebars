@@ -1,4 +1,4 @@
-<div class="group_summary">
+<div class="group_summary kids-profile-header">
 <h2>Welcome to {{group_name}}  <a href="/group-profile">See Details</a></h2>
 <p>When we earn <strong class="goalstar">{{group_star_goal_num}}</strong> stars, 
 {{group_goal_award}}</p>
@@ -32,7 +32,8 @@
 
 <div class="create-kid">
 <h2>Create a star kid!</h2>
-
+    <div class="createkid_container">
+    <img id="picture-preview" src="/images/kidpic_placeholder.png"/>
     <form id="createKid">
         <div>
             <label for="kidName">Name:</label>
@@ -41,17 +42,20 @@
         <div>
             <label for="kidPic">Kids' photo:</label> 
             <button id="upload_widget" class="cloudinary-button">Upload a picture</button>
-            <img id="picture-preview" src=""/>
+            
         </div>
         <div>
             <label for="kidGoal">Goal Star:</label>
-            <input type="input" id="kidGoalStar" name="kidGoalStar" required/>
+            <input type="input" id="kidGoalStar" name="kidGoalStar" required onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" placeholder="Number only"/>
         </div>
         <div>
             <label for="kidAward">Award:</label>
             <input type="input" id="kidAward" name="kidAward" required/>
         </div>
-        
+        <button type="submit" class="sbmbtn">Create!</button>
+    </form>
+    </div>
+</div>
 
 <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
 
@@ -63,7 +67,6 @@ var myWidget = cloudinary.createUploadWidget({
       console.log('Done! Here is the image info: ', result.info); 
       console.log(result.info.secure_url)
       const previewImg = document.querySelector("#picture-preview");
-      previewImg.setAttribute('style',"display:block")
       previewImg.setAttribute('src', result.info.secure_url);
     }
   }
@@ -73,8 +76,6 @@ document.getElementById("upload_widget").addEventListener("click", function(){
     myWidget.open();
   }, false);
 </script>
-        <button>Create!</button>
-    </form>
-</div>
+        
 
 <script src="/js/kidProfile.js"></script>

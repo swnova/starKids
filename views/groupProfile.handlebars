@@ -1,72 +1,86 @@
-        <h2>This is Group Profile Page!!</h2>
+        {{!-- !-- <h2>This is Group Profile Page!!</h2> --}} 
         <div class="group_summary">
-            <h3>Happy Family</h3>
+            <div class="group-pic">
+              <img src="{{group_picture}}" />
+            </div>
+            <div class="group-info">
+              <h2>{{group_name}}</h2>
 
-            {{!-- <ul class="task">
-                <li>Chores  <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_pink.png" class="star-sticker" /><strong>37</strong> </li>
-                <li>Homework <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_yellow.png" class="star-sticker" /><strong>17</strong> </li>
-                <li>Eat healthy food <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_green.png" class="star-sticker" /><strong>22</strong> </li>
-                <li>Care for pets <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_purple.png" class="star-sticker" /><strong>40</strong> </li>
-            </ul> --}}
-            <ul class="task">
-            {{#each task_categories}}
-              <li>{{task}} <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_pink.png" class="star-sticker" /><strong>#</strong> <button class="delBtn" data-taskId="{{id}}">Delete</button></li>
-            {{else}}
-              <p li="nodata">No Task Data. Please create a task!</p>
-            {{/each}}
-            </ul>
-
+              <ul class="task">
+              {{#each taskSet}}
+                <li>{{task}} <img src="/images/stars/star_{{color}}.png" class="star-sticker" /><strong>{{starnum}}</strong> 
+                <button class="delBtn" data-taskId="{{id}}">Delete</button></li>
+              {{else}}
+                <p li="nodata">No Task Data. Please create a task!</p>
+              {{/each}}
+              </ul>
 
 
-        <div class="create-task">
-          <form id="createTask" >
-            <label for="taskName"><strong>Create a new task!</strong></label>
-                <input type="text" id="taskName" required/>
-                <button>Create!</button>
-          </form>
+              <section class="familyscore">
+                  <div class="myscore">
+                      <h3>Family Score:</h3>
+                      <p>Total Stars: <strong class="totalstar">{{stars.length}}</strong></p>
+                      <p><strong class="starleft">{{starsUntilGoal}}</strong> stars until my goal</p>
+                      </div>
+                  <div class="mygoal">
+                      <h3>Family Goal:</h3>
+                      <p>When we earn <strong class="goalstar">{{group_star_goal_num}}</strong> stars</p>
+                      <p>{{group_goal_award}}</p>
+                  </div>
+              </section>
+
+              <div class="create-task">
+                <form id="createTask" >
+                  <label for="taskName"><strong>Create a new task!</strong></label>
+                      <input type="text" id="taskName" required/>
+                      <button>Create!</button>
+                </form>
+              </div>
+
+
+            </div>
         </div>
 
 
-        </div>
-        <div class="chartarea"><p>TODO: this is temp chart</p>
+
+
+        <div class="chartarea">
             <canvas id="myChart" ></canvas>
         </div>
-        <section class="familyscore">
-            <div class="myscore">
-                <h3>Family Score:</h3>
-                <p>Total Stars: <strong class="totalstar">TODO</strong></p>
-                <p><strong class="starleft">TODO</strong> stars until my goal</p>
-                </div>
-            <div class="mygoal">
-                <h3>Family Goal:</h3>
-                <p>When we earn <strong class="goalstar">{{group_star_goal_num}}</strong> stars</p>
-                <p>{{group_goal_award}}</p>
-                </div>
-                
-            </div>
-        </section>
+
 
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="text/javascript">
-const labels = ['Chores', 'Homework', 'Eat healthy', 'Care for pets'];
+const labels = [
+{{#each taskSet}}
+'{{task}}', 
+{{/each}}
+];
+const datanum = [
+{{#each taskSet}}
+'{{starnum}}', 
+{{/each}}
+]
+const borderColorData = [
+{{#each taskSet}}
+'{{colorCodes}}',
+{{/each}}
+]
+
+const bgColorData = [
+{{#each taskSet}}
+'{{bgcolorCodes}}',
+{{/each}}
+]
+
 const data = {
   labels: labels,
   datasets: [{
     label: 'We did it together',
-    data: [34, 17,22, 40],
-    backgroundColor: [
-      '#f1a7c9',
-      '#f1e5aa',
-      '#c7dfa6',
-      '#ac8aac'
-    ],
-    borderColor: [
-      '#ef3589',
-      '#fed403',
-      '#8cc63e',
-      '#873188'
-    ],
+    data: datanum,
+    backgroundColor: bgColorData,
+    borderColor: borderColorData,
     borderWidth: 1
   }]
 };
