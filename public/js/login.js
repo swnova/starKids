@@ -32,7 +32,7 @@ signupForm.addEventListener("submit",e=>{
         group_name:document.querySelector("#groupName").value,
         group_star_goal_num:document.querySelector("#groupStarNum").value,
         group_goal_award:document.querySelector("#groupAward").value,
-        group_picture:'https://morisky78.github.io/Portfolio/assets/images/temp/pic_all.jpg'
+        group_picture:document.querySelector("#picture-preview").src
     }
     fetch("/users/",{
         method:"POST",
@@ -44,7 +44,7 @@ signupForm.addEventListener("submit",e=>{
         if(res.ok){
            location.reload()
         } else {
-            alert("trumpet sound")
+            alert("Signup Error!")
         }
     })
 })

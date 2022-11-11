@@ -29,8 +29,8 @@ max-width: 1260px;
 
 .main-content{width:80%;padding:10px;}
 h2{font-size:20px;}
-.kids-container{display:flex;justify-content: space-around;margin:30px 0;}
-.kid-card{width:30%;border:1px solid #ccc;background:#fff;box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);border-radius: 5px;padding:10px;text-align: center;}
+.kids-container{display:flex;justify-content: space-around;margin:30px 0;flex-wrap:wrap}
+.kid-card{width:30%;border:1px solid #ccc;background:#fff;box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);border-radius: 5px;padding:10px;text-align: center;margin-bottom:10px;}
 .kid-card h3{text-align:center;font-weight:bold;margin:0 0 5px;font-size:1.2em;}
 .kid-pic img{width:100%;}
 .star-sticker{width:22px;margin:0 5px -3px 0;}
@@ -38,12 +38,21 @@ h2{font-size:20px;}
 .kid-card .task{margin:10px 0 15px 5px;text-align: left;}
 .kid-card .view-detail{margin:0 auto;}
 
-.group_summary{background:rgb(247, 220, 224);padding:15px;}
-.group_summary h3{font-weight:bold;font-size:15px;margin-bottom:10px;}
+.group_summary{background:rgb(247, 220, 224);padding:15px;display:flex;}
+.group_summary h2{font-weight:bold;font-size:1.8em;margin-bottom:10px;margin-bottom:15px;}
+.group_summary .group-pic{width:27%;}
+.group_summary .group-pic img{width:95%;}
+.group_summary .group-info{width:73%;}
+
+.kids-profile-header{
+   display:block; 
+}
 .nodata{padding:50px 0;}
 .create-kid{background-color:var(--gray-bg-color);padding:20px;}
 
-#picture-preview{width:100px;height:100px;display:none;}
+#picture-preview{width:130px;height:130px;vertical-align: center;}
+.createkid_container{display:flex;}
+.createkid_container form{padding-left:10px;}
 
 .familyscore{display:flex;}
 .mygoal{padding:20px;}
@@ -52,7 +61,6 @@ h2{font-size:20px;}
 .goalstar{color:blue;font-size:1.2em;}
 .myscore strong{color:red;font-size:1.5em;}
 
-ul.task{display: flex; margin:10px 0}
 .task li{margin-bottom:5px;font-weight:bold;font-size:1.2em;margin-right:25px;}
 
 .detail-container{display:flex;}
@@ -73,3 +81,4 @@ ul.task{display: flex; margin:10px 0}
 .detail-container  .profileimg img{width:150px;margin-bottom:10px;}
 
 .detail-container .task li.notask{font-weight:normal;font-size:1.0em;color:red;}
+

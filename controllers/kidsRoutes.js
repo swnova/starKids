@@ -49,17 +49,21 @@ router.get("/:id",(req,res)=>{
       return res.redirect("/login")
   }
   Kid.findByPk(req.params.id,{
-    order: [[Star,'updatedAt', 'ASC']],
     include:[
       {model: User, include:[Task]},
-      {model: Star, }
-    ]
+      {model: Star}
+    ],
+    order: [
+      [Star,'updatedAt', 'ASC']
+    ],
 
   }).then(userData=>{
     const hbsData = userData.toJSON();
 
     hbsData.logged_in=req.session.logged_in;
-    hbsData.starsUntilGoal = hbsData.star_goal_num - hbsData.stars.length;
+
+    const starleft = hbsData.star_goal_num - hbsData.stars.length;
+    hbsData.starsUntilGoal = ( starleft < 0 )? 0 : starleft ;
     console.log(hbsData.user.task_categories)
 
     //array of object with taskId, taskName & the number of stars of the task that this kid has
