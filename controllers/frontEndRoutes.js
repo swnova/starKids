@@ -86,4 +86,25 @@ router.get("/group-profile",(req,res)=>{
 })
 
 
+// render data if logged in to all user profiles
+router.get("/all-user",(req,res)=>{
+    if(!req.session.logged_in){
+        return res.redirect("/login")
+    }
+    User.findAll().then(users=>{
+        const userHbsData = users.map(user=>user.get({plain:true}))
+        console.log(users);
+        console.log(userHbsData);
+  
+        res.render("allUser",{
+            users:userHbsData,
+            logged_in:req.session.logged_in
+        })
+    })
+})
+
+
+  // 
+
+
 module.exports = router;
