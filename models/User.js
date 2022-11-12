@@ -16,7 +16,20 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    group_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    group_picture: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    group_star_goal_num: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    group_goal_award: {
       type: DataTypes.STRING,
       allowNull: false,
     },

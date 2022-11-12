@@ -1,0 +1,63 @@
+<h2>Login</h2>
+<form action="" id="login">
+    <input type="text" name="loginEmail" id="loginEmail" placeholder="loginEmail">
+    <input type="password" name="loginPassword" id="loginPassword" placeholder="loginPassword">
+    <button>Login</button>
+</form>
+<br /><br /><br />
+<div class="create-group">
+    <h2>Signup</h2>
+    <div class="creategroup_container">
+        <img id="picture-preview" src="/images/grouppic_placeholder.png" alt="group picture"/>
+        <form action="" id="signup">
+            <div class="basicinfo">
+                <h3>User Info.</h3>
+                <input type="text" name="signupEmail" id="signupEmail" placeholder="signupEmail" required/> <br />
+                <input type="password" name="signupPassword" id="signupPassword" placeholder="signupPassword" required/> <br /> 
+                <input type="text" name="signupName" id="signupName" placeholder="signupName" required/>
+            </div>
+            
+            <div class="groupinfo">
+                <h3>Tell me about your group</h3>      
+                <div class="picdiv">
+                    <label for="GroupPic">Group' photo:</label> 
+                    <button id="upload_widget" class="cloudinary-button">Upload a picture</button>
+                    
+                </div>
+                <div class="group-title">    
+                    <label>Group name: </label><input type="text" name="groupName" id="groupName" required/> 
+                </div>
+                <div class="group-award">
+                    <label>How many stars do you want to collect to win an award as a group? </label>
+                    <input type="text" name="groupStarNum" id="groupStarNum" placeholder="Number only" required onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;"/> 
+                </div>
+                <div class="group-goal">
+                    <lable>What is the award? </lable><input type="text" name="groupAward" id="groupAward" placeholder="We will ..." />
+                </div>
+            </div>
+            <button type="submit" class="sbmbtn">Signup</button>
+        </form>
+    </div>
+</div>
+<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
+
+<script type="text/javascript">  
+var myWidget = cloudinary.createUploadWidget({
+  cloudName: 'digyae86x', 
+  uploadPreset: 'prjdz6ga'}, (error, result) => { 
+    if (!error && result && result.event === "success") { 
+      console.log('Done! Here is the image info: ', result.info); 
+      console.log(result.info.secure_url)
+      const previewImg = document.querySelector("#picture-preview");
+      previewImg.setAttribute('style',"display:block")
+      previewImg.setAttribute('src', result.info.secure_url);
+    }
+  }
+)
+
+document.getElementById("upload_widget").addEventListener("click", function(){
+    myWidget.open();
+  }, false);
+</script>
+
+<script src="/js/login.js"></script>

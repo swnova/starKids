@@ -1,0 +1,146 @@
+:root {
+    --border-radius:20px;
+    --card-border-color:#ccc;
+    --gray-bg-color:rgb(238, 238, 238);
+}
+
+body{
+    background-image: url('https://morisky78.github.io/Portfolio/assets/images/temp/twinkle-little-star-1.jpg');
+    background-size: cover;
+    background-position: center;
+    padding:20px 0;
+    }
+.container{
+width:90%;
+margin:0 auto;
+background:#fff;
+border-radius: var(--border-radius);
+box-shadow: 0 0 14px rgba(0, 0, 0, 0.8);
+display:flex;
+max-width: 1260px;
+}
+
+.main-navigation{width:20%;background-color:rgb(237, 236, 252);border-radius: var(--border-radius) 0 0 var(--border-radius);}
+.main-navigation .inside{padding:20px;}
+.main-navigation .familypic img{width:200px;height:200px;border-radius:200px;border:5px solid #fff;}
+.main-navigation ul{padding:20px 0;}
+.main-navigation li{margin-bottom:8px;padding-left:15px;}
+
+.main-content{width:80%;padding:10px;}
+h2{font-size:1.5em;font-weight:bold;margin-bottom:10px;}
+.kids-container{display:flex;justify-content: space-around;margin:30px 0;flex-wrap:wrap}
+.kid-card{width:30%;border:1px solid #ccc;background:#fff;box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);border-radius: 5px;padding:10px;text-align: center;margin-bottom:10px;}
+.kid-card h3{text-align:center;font-weight:bold;margin:0 0 5px;font-size:1.2em;}
+.kid-pic img{width:100%;}
+.star-sticker{width:22px;margin:0 5px -3px 0;}
+
+.kid-card .task{margin:10px 0 15px 5px;text-align: left;}
+.kid-card .view-detail{margin:0 auto;}
+
+.group_summary{background:rgb(247, 220, 224);padding:15px;display:flex;}
+.group_summary h2{font-weight:bold;font-size:1.8em;margin-bottom:10px;margin-bottom:15px;}
+.group_summary .group-pic{width:27%;}
+.group_summary .group-pic img{width:95%;}
+.group_summary .group-info{width:73%;}
+
+.kids-profile-header{
+   display:block; 
+}
+.nodata{padding:50px 0;}
+.create-kid{background-color:var(--gray-bg-color);padding:20px;}
+
+#picture-preview{width:130px;height:130px;}
+
+.createkid_container{display:flex;}
+.createkid_container form{padding-left:10px;}
+.create-kid div{margin-bottom:5px;}
+
+.create-group{background-color:var(--gray-bg-color);padding:20px;}
+.creategroup_container{display:flex;}
+.create-group #picture-preview{width:170px;height:170px;}
+.create-group form{padding-left:20px;}
+.create-group h3{font-weight:bold;margin-bottom:5px;font-weight:1.2em;}
+.create-group input{margin-bottom:5px;}
+.create-group .groupinfo{padding-top:15px;}
+.create-group .groupinfo div{margin-bottom:5px;}
+.create-group #groupStarNum{width:100px;}
+.sbmbtn{width:200px;height:40px;border:2px solid blue;background:darkgrey;border-radius: 5px;}
+.familyscore{display:flex;}
+.mygoal{padding:20px;}
+
+.myscore{background:rgb(228, 227, 227);padding:20px;border-radius: 20px;margin-bottom:15px;}
+.goalstar{color:blue;font-size:1.2em;}
+.myscore strong{color:red;font-size:1.5em;}
+
+.task li{margin-bottom:5px;font-weight:bold;font-size:1.2em;margin-right:25px;}
+
+.detail-container{display:flex;}
+.detail-container h3{font-size:18px;font-weight:bold;}
+.detail-container .myscore{margin:20px 0 0 0;background:rgb(228, 227, 227);padding:20px;border-radius: 20px;margin-bottom:15px;}
+.detail-container .goalstar{color:blue;font-size:1.2em;}
+.detail-container .myscore strong{color:red;font-size:1.5em;}
+.detail-container .left{width:30%;}
+.detail-container .right {padding-left:20px;width:70%;}
+.detail-container p{font-weight:bold;font-size:1.2em;line-height:160%;}
+.detail-container .task{display:block;}
+.detail-container .task li{margin-bottom:5px;font-weight:bold;font-size:1.2em;}
+.detail-container .task li button{padding:2px 6px;font-family: sans-serif;font-size:13px;}
+.detail-container .inditable{border:1px solid #ccc; border-radius: 10px;padding:25px;margin:15px 0 0 0;}
+.detail-container .inditable th{padding:4px 0px;border-bottom:2px solid rgb(228, 227, 227);}
+.detail-container .inditable td{border-bottom:1px solid rgb(228, 227, 227);padding:4px 10px;}
+.detail-container .inditable .star-sticker{width:28px;}
+.detail-container  .profileimg img{width:150px;margin-bottom:10px;}
+
+.detail-container .task li.notask{font-weight:normal;font-size:1.0em;color:red;}
+
+/* Shreya */
+
+/* Container holding the image and the text */
+.homeScreen-container {
+    position: relative;
+    display: flex;
+  }
+  
+  /* Bottom right text */
+  .homeScreen-container .text-block {
+    position: absolute;
+    top: 250px;
+    left: 260px;
+    /* background-color: rgb(246, 178, 178); */
+    color: rgb(223, 49, 14);
+    padding-left: 20px;
+    padding-right: 20px;
+    size: 30px;
+    /* max-width: 50%; */
+  }
+
+  .homeScreen-container .animate-charcter{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 100px;
+      /* When time permits would work on font */
+      font-family:Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+      max-width: 100%;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}

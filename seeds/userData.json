@@ -1,0 +1,27 @@
+[
+  {
+    "group_name": "Mo's Munchkins",
+    "group_picture":"09-winter-home.jpg",
+    "email": "Mo@gmail.com",
+    "password": "password12345",
+    "group_star_goal_num":5,
+    "group_goal_award":" To go on vacation"
+
+  },
+  {
+    "group_name": "Michelle's Weirdos",
+    "group_picture":"08-frozen-river.jpg",
+    "email": "Michelle@gmail.com",
+    "password": "password123456",
+    "group_star_goal_num":5,
+    "group_goal_award":"To go fishing together"
+  },
+  {
+    "group_name": "Sharrod's Babies",
+    "group_picture":"07-autumn-mountains.jpg",
+    "email": "Sharrod@gmail.com",
+    "password": "password123457",
+    "group_star_goal_num":5,
+    "group_goal_award":"To go to favorite resturant together"
+  }
+]

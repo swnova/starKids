@@ -15,10 +15,10 @@ Task_categories.init(
         type: DataTypes.STRING,
         allowNull: false
       },
-    group_id: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'group',
+        model: 'user',
         key: 'id',
       },
     },

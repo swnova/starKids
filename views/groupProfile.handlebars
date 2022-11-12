@@ -1,0 +1,105 @@
+        {{!-- !-- <h2>This is Group Profile Page!!</h2> --}} 
+        <div class="group_summary">
+            <div class="group-pic">
+              <img src="{{group_picture}}" />
+            </div>
+            <div class="group-info">
+              <h2>{{group_name}}</h2>
+
+              <ul class="task">
+              {{#each taskSet}}
+                <li>{{task}} <img src="/images/stars/star_{{color}}.png" class="star-sticker" /><strong>{{starnum}}</strong> 
+                <button class="delBtn" data-taskId="{{id}}">Delete</button></li>
+              {{else}}
+                <p li="nodata">No Task Data. Please create a task!</p>
+              {{/each}}
+              </ul>
+
+
+              <section class="familyscore">
+                  <div class="myscore">
+                      <h3>Family Score:</h3>
+                      <p>Total Stars: <strong class="totalstar">{{stars.length}}</strong></p>
+                      <p><strong class="starleft">{{starsUntilGoal}}</strong> stars until my goal</p>
+                      </div>
+                  <div class="mygoal">
+                      <h3>Family Goal:</h3>
+                      <p>When we earn <strong class="goalstar">{{group_star_goal_num}}</strong> stars</p>
+                      <p>{{group_goal_award}}</p>
+                  </div>
+              </section>
+
+              <div class="create-task">
+                <form id="createTask" >
+                  <label for="taskName"><strong>Create a new task!</strong></label>
+                      <input type="text" id="taskName" required/>
+                      <button>Create!</button>
+                </form>
+              </div>
+
+
+            </div>
+        </div>
+
+
+
+
+        <div class="chartarea">
+            <canvas id="myChart" ></canvas>
+        </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript">
+const labels = [
+{{#each taskSet}}
+'{{task}}', 
+{{/each}}
+];
+const datanum = [
+{{#each taskSet}}
+'{{starnum}}', 
+{{/each}}
+]
+const borderColorData = [
+{{#each taskSet}}
+'{{colorCodes}}',
+{{/each}}
+]
+
+const bgColorData = [
+{{#each taskSet}}
+'{{bgcolorCodes}}',
+{{/each}}
+]
+
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'We did it together',
+    data: datanum,
+    backgroundColor: bgColorData,
+    borderColor: borderColorData,
+    borderWidth: 1
+  }]
+};
+const config = {
+  type: 'bar',
+  data: data,
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  },
+};
+const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+  
+    </script>
+
+    <script src="/js/groupProfile.js"></script>

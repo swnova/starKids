@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>starKids</title>
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <!-- Fevicon  for website-->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <section class="main-navigation">
+            <div class="inside">
+            <h1>Star Kids</h1>
+            <!-- <div class="familypic"><img src="../assets/pic_all.jpg" /></div> -->
+            <ul>
+                <li><a href="/">Home</a></li>
+                
+                {{#if logged_in}}
+                <li><a href="/profile">Kids Profile</a></li>
+                <li><a href="/group-profile">Group Profile</a></li>
+                 <li><a href="/all-user">Users Profile</a></li>
+                <li><button id ="logoutBtn">Log out</button></li>
+                {{else}}
+                <li><a href="/login">Login</a></li>
+                {{/if}}
+<!-- 
+                <li><a href="##">Sidney</a></li>
+                <li><a href="##">Vincent</a></li>
+                <li><a href="##">Chloe</a></li>
+-->
+                
+                
+                
+            </ul>
+            </div>
+        </section>
+
+        <main class="main-content">
+        <!-- main content starts -->
+            {{{body}}}
+        <!-- main content ends -->
+        </main>
+    </div>
+    <script src="/js/logout.js"></script>
+</body>
+</html>
