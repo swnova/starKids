@@ -93,3 +93,54 @@ h2{font-size:1.5em;font-weight:bold;margin-bottom:10px;}
 
 .detail-container .task li.notask{font-weight:normal;font-size:1.0em;color:red;}
 
+/* Shreya */
+
+/* Container holding the image and the text */
+.homeScreen-container {
+    position: relative;
+    display: flex;
+  }
+  
+  /* Bottom right text */
+  .homeScreen-container .text-block {
+    position: absolute;
+    top: 250px;
+    left: 260px;
+    /* background-color: rgb(246, 178, 178); */
+    color: rgb(223, 49, 14);
+    padding-left: 20px;
+    padding-right: 20px;
+    size: 30px;
+    /* max-width: 50%; */
+  }
+
+  .homeScreen-container .animate-charcter{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 100px;
+      /* When time permits would work on font */
+      font-family:Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+      max-width: 100%;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}

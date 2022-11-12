@@ -1,0 +1,32 @@
+<h2>Let's Show off!!</h2>
+<div class="group_summary">
+  <h3>All Families</h3>
+  <ul class="user">
+    {{!-- {{#each user}}
+    <li>{{group_name}} <a href="/all-user"></a><img
+        src="https://morisky78.github.io/Portfolio/assets/images/temp/star_pink.png"
+        class="star-sticker" /><strong>#</strong> </li>
+    <img src{{group_picture}}>
+    {{else}}
+    <p li="nodata">No Users. Please create a Users!</p>
+    {{/each}} --}}
+{{!-- In progress --}}
+    <div class="user-container">
+
+      <!-- for each user -->
+      {{#each user}}
+      <div class="user-card">
+        <h3>{{group_name}}</h3>
+        <span class="user-pic"><img src="{{group_picture}}" /></span>
+        <p>Goal Star: {{group_star_goal_num}}</p>
+        <p>{{group_goal_award}}</p>
+        <a href="/users/{{id}}"><button>View Details</button></a>
+      </div>
+      {{else}}
+      <p class="nodata">No Family Data.</p>
+      {{/each}}
+      <!-- for each kid -->
+
+    </div>
+  </ul>
+  <script src="/js/allUser.js"></script>
