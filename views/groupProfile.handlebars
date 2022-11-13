@@ -1,51 +1,57 @@
         {{!-- !-- <h2>This is Group Profile Page!!</h2> --}} 
         <div class="group_summary">
-            <div class="group-pic">
-              <img src="{{group_picture}}" />
-            </div>
-            <div class="group-info">
+            <div class="group-header">
               <h2>{{group_name}}</h2>
+              <div class="mygoal">
+                  <p>Group Goal:<br /> When we earn <strong class="goalstar">{{group_star_goal_num}}</strong> stars, 
+                  <span>{{group_goal_award}}</span>!!</p>
+              </div>
+            </div>
+            
+            <div class="group-info">
+              <div class="group-pic">
+                <img src="{{group_picture}}" />
+              </div>
+              
+              <div class="task-container">
+                <ul class="task">
+                {{#each taskSet}}
+                  <li>{{task}} <img src="/images/stars/star_{{color}}.png" class="star-sticker" /><strong>{{starnum}}</strong> 
+                  <button class="delBtn button-8" data-taskId="{{id}}">Delete</button></li>
+                {{else}}
+                  <p li="nodata">No Task Data. Please create a task!</p>
+                {{/each}}
+                </ul>
 
-              <ul class="task">
-              {{#each taskSet}}
-                <li>{{task}} <img src="/images/stars/star_{{color}}.png" class="star-sticker" /><strong>{{starnum}}</strong> 
-                <button class="delBtn" data-taskId="{{id}}">Delete</button></li>
-              {{else}}
-                <p li="nodata">No Task Data. Please create a task!</p>
-              {{/each}}
-              </ul>
-
-
-              <section class="familyscore">
-                  <div class="myscore">
-                      <h3>Family Score:</h3>
-                      <p>Total Stars: <strong class="totalstar">{{stars.length}}</strong></p>
-                      <p><strong class="starleft">{{starsUntilGoal}}</strong> stars until my goal</p>
-                      </div>
-                  <div class="mygoal">
-                      <h3>Family Goal:</h3>
-                      <p>When we earn <strong class="goalstar">{{group_star_goal_num}}</strong> stars</p>
-                      <p>{{group_goal_award}}</p>
-                  </div>
-              </section>
-
-              <div class="create-task">
-                <form id="createTask" >
-                  <label for="taskName"><strong>Create a new task!</strong></label>
-                      <input type="text" id="taskName" required/>
-                      <button>Create!</button>
-                </form>
+                <div class="create-task">
+                  <form id="createTask" >
+                    <label for="taskName"><strong>Create a new task!</strong></label>
+                        <input type="text" id="taskName" required/>
+                        <button class="button-43">Create!</button>
+                  </form>
+                </div>
               </div>
 
-
             </div>
+
         </div>
 
 
+            <section class="familyscore">
+                <div class="myscore">
+                    <h3>Group Score:</h3>
+                    <p>Total Stars: <strong class="totalstar">{{stars.length}}</strong> ⭐
+                    
+                    <strong class="starleft">{{starsUntilGoal}}</strong> stars until goal</p>
+                </div>
+            </section>
 
 
         <div class="chartarea">
+          <h3>🏆Our Achievements </h3>
             <canvas id="myChart" ></canvas>
+
+            <canvas id="myChart2" ></canvas>
         </div>
 
 
@@ -100,6 +106,43 @@ const myChart = new Chart(
     config
   );
   
+
+const labels2 = [
+{{#each kidTotalStarSet}}
+'{{kidname}}', 
+{{/each}}
+];
+const datanum2 = [
+{{#each kidTotalStarSet}}
+'{{starnum}}', 
+{{/each}}
+]
+
+const data2 = {
+  labels: labels2,
+  datasets: [{
+      label: 'Tatal stars of each kid',
+    data: datanum2,
+    backgroundColor: '#99cfc8',
+    borderColor: '#1f695f',
+    borderWidth: 1
+  }]
+};
+const config2 = {
+  type: 'bar',
+  data: data2,
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  },
+};
+const myChart2 = new Chart(
+    document.getElementById('myChart2'),
+    config2
+  );
     </script>
 
     <script src="/js/groupProfile.js"></script>
