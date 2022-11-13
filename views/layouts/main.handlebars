@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>starKids</title>
-    <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <title>StarKids - </title>
+
     <!-- Fevicon  for website-->
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&family=Schoolbell&display=swap" rel="stylesheet">
    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
     <div class="container">
@@ -18,15 +22,15 @@
             <h1>Star Kids</h1>
             <!-- <div class="familypic"><img src="../assets/pic_all.jpg" /></div> -->
             <ul>
-                <li><a href="/">Home</a></li>
+                <li class="{{home_class_on}}"><a href="/">Home</a></li>
                 
                 {{#if logged_in}}
-                <li><a href="/profile">Kids Profile</a></li>
-                <li><a href="/group-profile">Group Profile</a></li>
-                 <li><a href="/all-user">Users Profile</a></li>
-                <li><button id ="logoutBtn">Log out</button></li>
+                <li class="{{profile_class_on}}"><a href="/profile">Kids Profile</a></li>
+                <li class="{{group_profile_class_on}}"><a href="/group-profile">Group Profile</a></li>
+                <li class="{{all_user_class_on}}"><a href="/all-user">Users Profile</a></li>
+                <li><a href="#" id ="logoutBtn">Log out</a></li>
                 {{else}}
-                <li><a href="/login">Login</a></li>
+                <li class="{{login_class_on}}"><a href="/login">Login</a></li>
                 {{/if}}
 <!-- 
                 <li><a href="##">Sidney</a></li>

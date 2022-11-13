@@ -1,7 +1,7 @@
 <div class="group_summary kids-profile-header">
-<h2>Welcome to {{group_name}}  <a href="/group-profile">See Details</a></h2>
-<p>When we earn <strong class="goalstar">{{group_star_goal_num}}</strong> stars, 
-{{group_goal_award}}</p>
+    <h2>{{group_name}}  <a href="/group-profile" class="button-8">Group Details</a></h2>
+    <p>When we earn <strong class="goalstar">{{group_star_goal_num}}</strong> stars, 
+    <span>{{group_goal_award}}</span>!!</p>
 </div>
 
 <div class="kids-container">
@@ -10,18 +10,16 @@
     {{#each kids}}
     <div class="kid-card">
         <h3>{{name}}</h3>
-        <span class="kid-pic"><img src="{{picture}}" /></span>
-        {{!-- <ul class="task">
-            <li>Chores  <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_pink.png" class="star-sticker" /><strong>8</strong> </li>
-            <li>Homework <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_yellow.png" class="star-sticker" /><strong>12</strong> </li>
-            <li>Eat healthy food <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_green.png" class="star-sticker" /><strong>4</strong> </li>
-            <li>Care for pets <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_purple.png" class="star-sticker" /><strong>13</strong> </li>
-        </ul>  --}}
-        <p>Goal Star: {{star_goal_num}}</p>
-        <p>{{goal_award}}</p>
-        <a href="/kids/{{id}}"><button>View Details</button></a>
-        <button class="delBtn" data-projId="{{id}}">Delete</button>
-        
+        <div class="box-in">
+            <span class="kid-pic"><img src="{{picture}}" /></span>
+
+            <p class="g"><span>Goal:</span> {{star_goal_num}}⭐</p>
+            <p class="aw">{{goal_award}}</p>
+        </div>
+        <section class="btns">
+            <a href="/kids/{{id}}"><button class="button-8">View Details</button></a>
+            <button class="delBtn button-8" data-projId="{{id}}">Delete</button>
+        </section>
     </div>
     {{else}}
     <p class="nodata">No Kid Data. Please enter kid's information.</p>
@@ -52,7 +50,7 @@
             <label for="kidAward">Award:</label>
             <input type="input" id="kidAward" name="kidAward" required/>
         </div>
-        <button type="submit" class="sbmbtn">Create!</button>
+        <button type="submit" class="button-43">Create!</button>
     </form>
     </div>
 </div>

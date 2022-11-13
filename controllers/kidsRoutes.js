@@ -132,7 +132,7 @@ router.get("/:id",(req,res)=>{
 
     hbsData.taskSet = taskSet;
     hbsData.starDateSet = starDateSet;
-
+    hbsData.profile_class_on = "on";
     console.log(hbsData)
     res.render("kidDetail",hbsData)
   })
