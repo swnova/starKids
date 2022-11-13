@@ -124,6 +124,7 @@ router.get("/all-user",(req,res)=>{
             const hbsmembers = members.map(flav=>flav.toJSON())
             userHbsData1.logged_in=req.session.logged_in;
             userHbsData1.members = hbsmembers
+            userHbsData1.all_user_class_on= "on"
             console.log(userHbsData1)
             res.render("allUser",userHbsData1)
             })
