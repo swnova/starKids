@@ -35,7 +35,7 @@ The user must make sure to run mysql to get the db and tables. Once this is done
 ![The basic table structure.](./public/images/table_structure.png)
 
 github- https://github.com/swnova/starKids.git
-heroku- 
+heroku- https://starkids-app.herokuapp.com/
 
 ## Collaborations
 Mo- She was our frontend guru, she used her amazing skills to make the client side of our project amazing and pleasing to the eye! While also adding the handlebars to make it functioning.

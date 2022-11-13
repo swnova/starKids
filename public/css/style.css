@@ -104,6 +104,7 @@ font-size:90px;
 }
 .kid-card h3{text-align:center;font-weight:bold;margin:0 0 5px;font-size:1.2em;}
 .kid-pic img{width:100%;}
+
 .star-sticker{width:22px;margin:0 5px -3px 0;}
 
 .kid-card .task{margin:10px 0 15px 5px;text-align: left;}
@@ -144,6 +145,13 @@ font-size:90px;
   display:flex;
   justify-content: space-between;
 }
+/* User */
+.user_summary{background:rgb(247, 220, 224);padding:5px;display:flex;}
+.user-pic img{width: 30%;}
+.user-card{width:80%;border:1px solid #ccc;background:#fff;box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);border-radius: 5px;padding:20px;text-align: center;margin-bottom:10px;}
+.user-card h3{text-align:center;font-weight:bold;margin:0 0 5px;font-size:1.2em;}
+
+
 .kids-detail-header h2{font-weight:bold;font-size:1.8em;}
 .kids-detail-header .mygoal{line-height:130%;font-size:1.1em;font-style: italic;}
 
