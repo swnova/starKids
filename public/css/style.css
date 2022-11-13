@@ -32,6 +32,7 @@ h2{font-size:1.5em;font-weight:bold;margin-bottom:10px;}
 .kid-card{width:30%;border:1px solid #ccc;background:#fff;box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);border-radius: 5px;padding:10px;text-align: center;margin-bottom:10px;}
 .kid-card h3{text-align:center;font-weight:bold;margin:0 0 5px;font-size:1.2em;}
 .kid-pic img{width:100%;}
+
 .star-sticker{width:22px;margin:0 5px -3px 0;}
 
 .kid-card .task{margin:10px 0 15px 5px;text-align: left;}
@@ -42,6 +43,13 @@ h2{font-size:1.5em;font-weight:bold;margin-bottom:10px;}
 .group_summary .group-pic{width:27%;}
 .group_summary .group-pic img{width:95%;}
 .group_summary .group-info{width:73%;}
+
+/* User */
+.user_summary{background:rgb(247, 220, 224);padding:5px;display:flex;}
+.user-pic img{width: 30%;}
+.user-card{width:80%;border:1px solid #ccc;background:#fff;box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);border-radius: 5px;padding:20px;text-align: center;margin-bottom:10px;}
+.user-card h3{text-align:center;font-weight:bold;margin:0 0 5px;font-size:1.2em;}
+
 
 .kids-profile-header{
    display:block; 
