@@ -33,6 +33,11 @@ The user must make sure to run mysql to get the db and tables. Once this is done
 
 ## Example
 ![The basic table structure.](./public/images/table_structure.png)
+![This is the home page.](public/images/HomePg.png)
+![This is the kid's profile page.](public/images/kidProfile.png)
+![This is the group profile page.](public/images/groupProfile.png)
+![This is the user profile page.](public/images/userProfile.png)
+![This is the login page.](public/images/loginPg.png)
 
 github- https://github.com/swnova/starKids.git
 heroku- https://starkids-app.herokuapp.com/
