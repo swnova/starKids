@@ -86,25 +86,27 @@ router.get("/group-profile",(req,res)=>{
 })
 
 
-// render data if logged in to all user profiles
+
+// 
+
 router.get("/all-user",(req,res)=>{
     if(!req.session.logged_in){
         return res.redirect("/login")
     }
-    User.findAll().then(users=>{
-        const userHbsData = users.map(user=>user.get({plain:true}))
+    User.findByPk(req.session.user_id).then(users=>{
+        const userHbsData1 = users.toJSON();
         console.log(users);
-        console.log(userHbsData);
-  
-        res.render("allUser",{
-            users:userHbsData,
-            logged_in:req.session.logged_in
+        console.log(userHbsData1);
+        User.findAll().then(members=>{
+           
+            const hbsmembers = members.map(flav=>flav.toJSON())
+            userHbsData1.logged_in=req.session.logged_in;
+            userHbsData1.members = hbsmembers
+            console.log(userHbsData1)
+            res.render("allUser",userHbsData1)
+            })
         })
     })
-})
-
-
-  // 
 
 
 module.exports = router;
