@@ -7,10 +7,12 @@ router.get("/",(req,res)=>{
         const userHbsData = users.map(user=>user.get({plain:true}))
         console.log(users);
         console.log(userHbsData);
-
+        
         res.render("home",{
             users:userHbsData,
-            logged_in:req.session.logged_in
+            logged_in:req.session.logged_in,
+            // to display 'ON' for active menu tag on the main navigation
+            home_class_on:"on"
         })
     })
 })
@@ -24,7 +26,9 @@ router.get("/login",(req,res)=>{
     if(req.session.logged_in){
         return res.redirect("/profile")
     }
-    res.render("login")
+    res.render("login", {
+        login_class_on: "on"
+    })
 })
 
 router.get("/profile",(req,res)=>{
@@ -35,6 +39,8 @@ router.get("/profile",(req,res)=>{
         include:[Kid]
     }).then(userData=>{
         const hbsData = userData.toJSON();
+        // to display 'ON' for active menu tag on the main navigation
+        hbsData.profile_class_on = "on";
         console.log(hbsData)
         hbsData.logged_in=req.session.logged_in
         res.render("kidProfile",hbsData)
@@ -53,7 +59,9 @@ router.get("/group-profile",(req,res)=>{
         ],
     }).then(userData=>{
         const hbsData = userData.toJSON();
-        
+        // to display 'ON' for active menu tag on the main navigation
+        hbsData.group_profile_class_on = "on";
+
         const starleft = hbsData.group_star_goal_num - hbsData.stars.length;
         hbsData.starsUntilGoal = ( starleft < 0 )? 0 : starleft ;
 
@@ -75,10 +83,24 @@ router.get("/group-profile",(req,res)=>{
           taskSet.push(taskSetObj)
         }
     
+        const kidTotalStarSet=[];
+        for (let i = 0; i < hbsData.kids.length ; i++) {
+            const starsForThisKid = hbsData.stars.filter(star => star.kid_id == hbsData.kids[i].id);
+            const kidStarObj  = { 
+                id: hbsData.kids[i].id, 
+                kidname : hbsData.kids[i].name,
+                starnum : starsForThisKid.length,
+                colorCodes: colorCodes[i],
+                bgcolorCodes: bgColorCodes[i]
+            }  
+            kidTotalStarSet.push(kidStarObj)     
+        }
+
         console.log(taskSet);
 
         hbsData.logged_in=req.session.logged_in;
         hbsData.taskSet = taskSet;
+        hbsData.kidTotalStarSet = kidTotalStarSet;
 
         console.log(hbsData)
         res.render("groupProfile",hbsData)
@@ -86,25 +108,28 @@ router.get("/group-profile",(req,res)=>{
 })
 
 
-// render data if logged in to all user profiles
+
+// 
+
 router.get("/all-user",(req,res)=>{
     if(!req.session.logged_in){
         return res.redirect("/login")
     }
-    User.findAll().then(users=>{
-        const userHbsData = users.map(user=>user.get({plain:true}))
+    User.findByPk(req.session.user_id).then(users=>{
+        const userHbsData1 = users.toJSON();
         console.log(users);
-        console.log(userHbsData);
-  
-        res.render("allUser",{
-            users:userHbsData,
-            logged_in:req.session.logged_in
+        console.log(userHbsData1);
+        User.findAll().then(members=>{
+           
+            const hbsmembers = members.map(flav=>flav.toJSON())
+            userHbsData1.logged_in=req.session.logged_in;
+            userHbsData1.members = hbsmembers
+            userHbsData1.all_user_class_on= "on"
+            console.log(userHbsData1)
+            res.render("allUser",userHbsData1)
+            })
         })
     })
-})
-
-
-  // 
 
 
 module.exports = router;

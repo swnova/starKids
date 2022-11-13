@@ -1,36 +1,37 @@
-<h2 data-kidId="{{id}}" id="kid-info">{{name}}</h2>
+<div class="kids-detail-header">
+    <h2 data-kidId="{{id}}" id="kid-info">{{name}}</h2>
+    <div class="mygoal">
+        <p><strong>Goal:</strong> <strong class="goalstar">{{star_goal_num}}</strong> <span>⭐</span></p>
+        <p><strong>Award:</strong> {{goal_award}}</p>
+    </div>
+</div>
+
         <div class="detail-container">
             <div class="left">
                 <span class="profileimg"><img src="{{picture}}" /></span>
                 <ul class="task">
                     {{#each taskSet}}
-                    <li>{{task}}  <img src="/images/stars/star_{{color}}.png" class="star-sticker" /><strong>{{starnum}}</strong> <button class="iDidItBtn" data-taskId="{{id}}">I did it!</button></li>
+                    <li>{{task}}  <img src="/images/stars/star_{{color}}.png" class="star-sticker" /><strong>{{starnum}}</strong> <button class="iDidItBtn button-8" data-taskId="{{id}}">I did it!</button></li>
                     {{else}}
                     <li class="notask">There is no task in this group. please go to Group Profile and create some tasks</li>
                     {{/each}}
 
                 </ul>
 
+            </div>
+            <div class="right">
                 
                 <div class="myscore">
-                <h3>My Score:</h3>
                 <p>Total Stars: <strong class="totalstar">{{stars.length}}</strong></p>
                 <p><strong class="starleft">{{starsUntilGoal}}</strong> stars until my goal</p>
                 </div>
-            </div>
-            <div class="right">
-                <div class="mygoal">
-                    <h3>My Goal:</h3>
-                    <p>When I earn <strong class="goalstar">{{star_goal_num}}</strong> stars</p>
-                    <p>{{goal_award}}</p>
-                    </div>
 
                 <div class="inditable">
                     <table>
                         <tr><th>dates</th><th>stars</th></tr>
 {{#each starDateSet}}
 <tr>
-<td>{{date}}</td>
+<td class="a">{{date}}</td>
 <td>
     {{#each taskColors as | color |}}
     <img src="/images/stars/star_{{color}}.png" class="star-sticker" />
@@ -41,15 +42,7 @@
 <tr><td></td><td>No stars yet! keep it up!</td></tr>
 {{/each}}
 
-                        {{!-- <tr><td>10/02/22</td>
-                            <td><img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_pink.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_pink.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_yellow.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_green.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_purple.png" class="star-sticker" />
-                                <img src="https://morisky78.github.io/Portfolio/assets/images/temp/star_green.png" class="star-sticker" />
-                            </td>
-                        </tr> --}}
+
 
 
                     </table>
