@@ -42,11 +42,16 @@ The user must make sure to run mysql to get the db and tables. Once this is done
 github- https://github.com/swnova/starKids.git
 heroku- https://starkids-app.herokuapp.com/
 
-## Collaborations
-Mo- She was our frontend guru, she used her amazing skills to make the client side of our project amazing and pleasing to the eye! While also adding the handlebars to make it functioning.
 
-Shreya- She learned to use the cloudinary npm, she built our seeds, and made the models all connect and run smoothly. She used her creativity to get each page to function properly.
+## Credits & Collaborations
 
-Sharrod- He built the repo and set up the initial folders and files for the group to put code into, and was the github manager.
+  Shreya Mishra, Mo Risk, Michelle Beaudoin and Sharrod Willinova contributed equally and created the entirety of this Website. 
+  Mo- She was our frontend guru, she used her amazing skills to make the client side of our project amazing and pleasing to the eye! While also adding the handlebars to make it functioning.
+  Shreya- She worked with backend stuff, building the data base structure, user handlebar and made the models all connect and run smoothly. She used her creativity to get each page to function properly.
 
-Michelle- She was our project maganger, she built the controllers and tested them to make sure they were working properly. She made sure the konbon board was up to date and helped anyone that needed assistance in pushing or pulling without hiccups.
+  Sharrod- He built the repo and set up the initial folders and files for the group to put code into, and was the github manager.
+
+  Michelle- She was our project maganger, she built the controllers and tested them to make sure they were working properly. She made sure the konbon board was up to date and helped anyone that needed assistance in pushing or pulling without hiccups.
+ 
+ You can find other projects by Shreya, Mo, Sharrod and Michelle at each of their github pages: [Mo Risk](https://github.com/morisky78), [Shreya](https://github.com/shreyamishra9618), [Sarrod](https://github.com/swnova) and 
+ [Michelle](https://github.com/mfarrell23).
