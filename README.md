@@ -42,6 +42,6 @@ Mo- She was our frontend guru, she used her amazing skills to make the client si
 
 Shreya- She learned to use the cloudinary npm, she built our seeds, and made the models all connect and run smoothly. She used her creativity to get each page to function properly.
 
-Sharrod- He build the repo and set up the initial folders and files for the group to put code into, and was the github manager.
+Sharrod- He built the repo and set up the initial folders and files for the group to put code into, and was the github manager.
 
 Michelle- She was our project maganger, she built the controllers and tested them to make sure they were working properly. She made sure the konbon board was up to date and helped anyone that needed assistance in pushing or pulling without hiccups.
