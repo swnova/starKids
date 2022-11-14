@@ -147,11 +147,11 @@ font-size:90px;
 }
 /* User */
 .user_summary{background:rgb(247, 220, 224);padding:5px;display:flex;}
-.user-pic img{width: 30%;}
+.user-pic img{width: 35%;}
 .user-card{width:80%;border:1px solid #ccc;background:#fff;box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);border-radius: 5px;padding:20px;text-align: center;margin-bottom:10px;}
 .user-card h3{text-align:center;font-weight:bold;margin:0 0 5px;font-size:1.2em;}
 
-
+.user_summary h2{font-size:2.4em;width:20%;color:#fff;font-weight:bold;text-align:right;text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);}
 .kids-detail-header h2{font-weight:bold;font-size:1.8em;}
 .kids-detail-header .mygoal{line-height:130%;font-size:1.1em;font-style: italic;}
 
@@ -474,4 +474,9 @@ font-size:90px;
   .creategroup_container{flex-direction: column;}
   .create-group form{width:100%;padding:15px 0;}
   
+  .user_summary{flex-direction: column;}
+.user-pic img{width: 55%;}
+.user-card{width:100%;}
+
+.user_summary h2{width:100%}
 }
