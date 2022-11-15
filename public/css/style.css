@@ -7,7 +7,7 @@
 }
 
 body{
-    background-image: url('https://morisky78.github.io/Portfolio/assets/images/temp/twinkle-little-star-1.jpg');
+    background-image: url('/images/twinkle-little-star-1.jpg');
     background-size: cover;
     background-position: center;
     padding:20px 0;
@@ -117,6 +117,7 @@ font-size:90px;
 
 .group_summary{background:rgb(220, 227, 240);padding:15px;border-top-right-radius:15px ;margin-bottom:10px;}
 .group_summary h2{font-weight:bold;font-size:1.8em;}
+.group_summary h2 a{vertical-align: top;}
 .group_summary .group-header{margin-bottom:10px;}
 .group_summary .group-header .mygoal{line-height:120%;font-size:1.15em;font-style: italic;font-weight: bold;text-align: right;margin-top:-8px;}
 .group_summary .group-info{display:flex;}
@@ -126,6 +127,8 @@ font-size:90px;
 .group_summary .task-container .task{margin-bottom:18px;}
 .group_summary .task-container li{margin-bottom:8px;font-size:1.15em;}
 .group_summary .task-container li button{padding:2px 6px;font-family: sans-serif;font-size:13px;}
+.group_summary .max{font-size:0.8em;color:#5b6282;}
+
 .familyscore .myscore h3{font-weight:bold;}
 .familyscore .myscore{text-align: right;line-height:120%;font-size:1.15em;font-style: italic;font-weight: bold;text-align: right;margin-bottom:8px;padding-right:5px;}
 .chartarea{width:90%;}
