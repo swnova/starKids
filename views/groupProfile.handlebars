@@ -23,13 +23,16 @@
                 {{/each}}
                 </ul>
 
-                <div class="create-task">
+                
+                <div class="create-task" style="{{create_task_hide}}">
                   <form id="createTask" >
                     <label for="taskName"><strong>Create a new task!</strong></label>
                         <input type="text" id="taskName" required/>
                         <button class="button-43">Create!</button>
                   </form>
                 </div>
+                <P class="max">*The maximum task # is 9.</P>
+                
               </div>
 
             </div>

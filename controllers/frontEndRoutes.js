@@ -96,7 +96,13 @@ router.get("/group-profile",(req,res)=>{
             kidTotalStarSet.push(kidStarObj)     
         }
 
-        console.log(taskSet);
+        // console.log(taskSet);
+        // maximum task number is 9 becasue only 9 star images available for now
+        if (hbsData.task_categories.length < 9 )  {
+            hbsData.create_task_hide = '';
+        } else {
+            hbsData.create_task_hide = "display:none;";
+        }    
 
         hbsData.logged_in=req.session.logged_in;
         hbsData.taskSet = taskSet;
