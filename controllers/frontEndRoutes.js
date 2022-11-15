@@ -96,7 +96,13 @@ router.get("/group-profile",(req,res)=>{
             kidTotalStarSet.push(kidStarObj)     
         }
 
-        console.log(taskSet);
+        // console.log(taskSet);
+        // maximum task number is 9 becasue only 9 star images available for now
+        if (hbsData.task_categories.length < 9 )  {
+            hbsData.create_task_hide = '';
+        } else {
+            hbsData.create_task_hide = "display:none;";
+        }    
 
         hbsData.logged_in=req.session.logged_in;
         hbsData.taskSet = taskSet;
@@ -131,5 +137,19 @@ router.get("/all-user",(req,res)=>{
         })
     })
 
+
+router.get("/update-group",(req,res)=>{
+    if(!req.session.logged_in){
+        return res.redirect("/login")
+    }
+    User.findByPk(req.session.user_id)
+    .then(userData=>{
+        const hbsData = userData.toJSON();
+        hbsData.group_profile_class_on = "on";
+        console.log(hbsData)
+        hbsData.logged_in=req.session.logged_in;
+        res.render("groupUpdate",hbsData)
+    })
+})
 
 module.exports = router;

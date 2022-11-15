@@ -1,7 +1,7 @@
         {{!-- !-- <h2>This is Group Profile Page!!</h2> --}} 
         <div class="group_summary">
             <div class="group-header">
-              <h2>{{group_name}}</h2>
+              <h2>{{group_name}} <a href="/update-group" class="button-8" >Update Group Goal</a></h2>
               <div class="mygoal">
                   <p>Group Goal:<br /> When we earn <strong class="goalstar">{{group_star_goal_num}}</strong> stars, 
                   <span>{{group_goal_award}}</span>!!</p>
@@ -23,13 +23,16 @@
                 {{/each}}
                 </ul>
 
-                <div class="create-task">
+                
+                <div class="create-task" style="{{create_task_hide}}">
                   <form id="createTask" >
                     <label for="taskName"><strong>Create a new task!</strong></label>
                         <input type="text" id="taskName" required/>
                         <button class="button-43">Create!</button>
                   </form>
                 </div>
+                <P class="max">*The maximum task # is 9.</P>
+                
               </div>
 
             </div>

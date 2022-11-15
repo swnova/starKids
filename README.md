@@ -46,7 +46,10 @@ heroku- https://starkids-app.herokuapp.com/
 ## Credits & Collaborations
 
   Shreya Mishra, Mo Risk, Michelle Beaudoin and Sharrod Willinova contributed equally and created the entirety of this Website. 
+
+
   Mo- She was our frontend guru, she used her amazing skills to make the client side of our project amazing and pleasing to the eye! While also adding the handlebars to make it functioning.
+
   Shreya- She worked with backend stuff, building the data base structure, user handlebar and made the models all connect and run smoothly. She used her creativity to get each page to function properly.
 
   Sharrod- He built the repo and set up the initial folders and files for the group to put code into, and was the github manager.

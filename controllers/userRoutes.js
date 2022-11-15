@@ -80,4 +80,27 @@ router.get("/all-user",(req,res)=>{
 })
 
 
+router.put('/', async (req, res) => {
+  console.log("****");
+  console.log(req.session.user_id)
+  try {
+    const userData = await User.update(
+      {
+        group_name: req.body.group_name,
+        group_star_goal_num: req.body.group_star_goal_num,
+        group_goal_award: req.body.group_goal_award,
+        group_picture: req.body.group_picture,
+      },
+      {
+        where: {
+          id:  req.session.user_id
+        },
+      }
+    );
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
