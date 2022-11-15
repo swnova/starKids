@@ -32,12 +32,7 @@
                 {{else}}
                 <li class="{{login_class_on}}"><a href="/login">Login</a></li>
                 {{/if}}
-<!-- 
-                <li><a href="##">Sidney</a></li>
-                <li><a href="##">Vincent</a></li>
-                <li><a href="##">Chloe</a></li>
--->
-                
+     
                 
                 
             </ul>
@@ -50,6 +45,8 @@
         <!-- main content ends -->
         </main>
     </div>
+    {{#if logged_in}}
     <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 </html>

@@ -7,7 +7,7 @@
 }
 
 body{
-    background-image: url('https://morisky78.github.io/Portfolio/assets/images/temp/twinkle-little-star-1.jpg');
+    background-image: url('/images/twinkle-little-star-1.jpg');
     background-size: cover;
     background-position: center;
     padding:20px 0;
@@ -117,6 +117,7 @@ font-size:90px;
 
 .group_summary{background:rgb(220, 227, 240);padding:15px;border-top-right-radius:15px ;margin-bottom:10px;}
 .group_summary h2{font-weight:bold;font-size:1.8em;}
+.group_summary h2 a{vertical-align: top;}
 .group_summary .group-header{margin-bottom:10px;}
 .group_summary .group-header .mygoal{line-height:120%;font-size:1.15em;font-style: italic;font-weight: bold;text-align: right;margin-top:-8px;}
 .group_summary .group-info{display:flex;}
